@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Press to get a job"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="341dp" />
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="456dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
