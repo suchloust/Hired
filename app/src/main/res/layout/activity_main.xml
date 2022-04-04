@@ -45,14 +45,14 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNumberPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
     <EditText
         android:id="@+id/companyEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/Opal"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/HunterGreen"
         android:ems="10"
         android:hint="@string/userEmailAddressHint"
         android:inputType="textEmailAddress"
@@ -65,10 +65,10 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword2"
+        android:id="@+id/companyPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/HunterGreen"
         android:ems="10"
         android:hint="@string/userPasswordHint"
@@ -97,7 +97,7 @@
         android:id="@+id/userEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/HunterGreen"
         android:ems="10"
         android:fontFamily="sans-serif"
@@ -110,11 +110,11 @@
         app:layout_constraintTop_toBottomOf="@+id/userSignInLabel" />
 
     <EditText
-        android:id="@+id/userNumberPassword"
+        android:id="@+id/userPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/Opal"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/HunterGreen"
         android:ems="10"
         android:hint="@string/userPasswordHint"
         android:inputType="textPassword"
@@ -133,10 +133,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNumberPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/companySubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -144,5 +144,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/companyPassword" />
+
+    <Button
+        android:id="@+id/existingUserButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/exisitingUserButtonLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companySubmitButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

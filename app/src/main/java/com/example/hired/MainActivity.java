@@ -2,73 +2,70 @@ package com.example.hired;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    CSVFileWriter csv;
-    StringBuffer filePath;
-    File file;
+    EditText userUS, userPW, companyUS, companyPW;
+    Button userSubButton, companySubButton,existingUSButton ;
+    DataBaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button saveButton = findViewById(R.id.userSubmitButton);
-        EditText editText = findViewById(R.id.userEmailAddress);
+        userUS = (EditText) findViewById(R.id.userEmailAddress);
+        userPW = (EditText)  findViewById(R.id.userPassword);
+        userSubButton = (Button) findViewById(R.id.userSubmitButton);
 
-        filePath = new StringBuffer();
-        filePath.append("/sdcard/abc.csv");
-        file = new File(filePath.toString());
+        companyUS = (EditText) findViewById(R.id.companyEmailAddress);
+        companyPW = (EditText) findViewById(R.id.companyPassword);
+        companySubButton = (Button) findViewById(R.id.companySubmitButton);
 
-        csv = new CSVFileWriter(file);
+        existingUSButton = (Button) findViewById(R.id.existingUserButton);
+        DB = new DataBaseHelper(this);
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
+     userSubButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+            String user = userUS.getText().toString();
+            String pass = userPW.getText().toString();
 
-                csv.writeHeader(editText.getText().toString());
-
+            if(user.equals("")||pass.equals("")){
+                Toast.makeText(MainActivity.this,"Please enter all fields", Toast.LENGTH_SHORT).show();
             }
-        });
-    }
-}
-
-    class CSVFileWriter {
-
-        private PrintWriter csvWriter;
-        private File file;
-
-        public CSVFileWriter(File file) {
-            this.file = file;
-
-        }
-
-        public void writeHeader(String data) {
-
-            try {
-                if (data != null) {
-
-                    csvWriter = new PrintWriter(new FileWriter(file, true));
-                    csvWriter.print(",");
-                    csvWriter.print(data);
-                    csvWriter.close();
-
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+            else {
+                Boolean checkUser = DB.checkUsername(user);
+                    if(checkUser == false){
+                        Boolean insert = DB.insertData(user, pass);
+                    }
+                    if (checkUser == true){
+                        Toast.makeText(MainActivity.this,"Welcome to WorkSpace", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent (getApplicationContext(), HomeActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this,"Registration Failed", Toast.LENGTH_SHORT).show();
+                    }
             }
+         }
+     });
 
-        }
+     existingUSButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+
+         }
+     });
+
+
     }
 }

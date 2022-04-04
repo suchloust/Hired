@@ -15,4 +15,5 @@
     <string name="userEmailAddressHint">Enter Email Address</string>
     <string name="userPasswordHint">Enter Password</string>
     <string name="submitButtonLabel">Submit</string>
+    <string name="exisitingUserButtonLabel">I already have an account</string>
 </resources>
