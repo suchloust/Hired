@@ -38,7 +38,7 @@
         android:id="@+id/companySignInLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="92dp"
         android:fontFamily="@font/rubik"
         android:text="@string/companySignInLabelText"
         android:textColor="@color/RoyalBlue"
@@ -124,14 +124,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userEmailAddress" />
 
+    <EditText
+        android:id="@+id/userPassword2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/HunterGreen"
+        android:ems="10"
+        android:hint="@string/userPasswordHint"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/HunterGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEmailAddress" />
+
     <Button
         android:id="@+id/userSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="44dp"
         android:text="@string/submitButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
@@ -156,4 +170,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companySubmitButton" />
+
+    <EditText
+        android:id="@+id/userRetypePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/HunterGreen"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="@color/HunterGreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

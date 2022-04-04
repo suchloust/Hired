@@ -18,7 +18,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
         public void onCreate(SQLiteDatabase MyDB) {
-        MyDB.execSQL("create Table users(userUS, TEXT primary Key, UserPW TEXT)");
+        MyDB.execSQL("create Table users(username TEXT primary Key, password TEXT)");
         }
 
         @Override
@@ -33,7 +33,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             contentValues.put("password",password);
             long result = MyDB.insert("users", null, contentValues);
             if (result == -1) return false;
-            else return true;
+            else
+                return true;
         }
 
         public Boolean checkUsername(String username){

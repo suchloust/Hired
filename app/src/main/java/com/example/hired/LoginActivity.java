@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,"Please enter all fields", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Boolean checkUser = DB.checkUsername(user);
-                    if (checkUser == true){
+                    Boolean checkUserPass = DB.checkUserPassword(user, pass);
+                    if (checkUserPass == true){
                         Toast.makeText(LoginActivity.this,"Welcome to WorkSpace", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent (getApplicationContext(), HomeActivity.class);
                         startActivity(intent);
