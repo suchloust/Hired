@@ -1,4 +1,6 @@
 package com.example.hired;
 
-public class activity_filters {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class activity_filters extends AppCompatActivity {
 }
