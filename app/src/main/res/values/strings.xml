@@ -14,4 +14,9 @@
     <string name="companySignInLabelText">Start searching for employees...</string>
     <string name="userEmailAddressHint">Enter Email Address</string>
     <string name="userPasswordHint">Enter Password</string>
+    <string name="filtersStr">Filters</string>
+    <string name="likedStr">Liked Companies</string>
+    <string name="answerFieldHintStr">Enter in your response</string>
+    <string name="submitAnswerStr">Submit</string>
+    <string name="nextQuestionStr">Next</string>
 </resources>
