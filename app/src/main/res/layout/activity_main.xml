@@ -8,181 +8,79 @@
     android:foregroundTint="@color/Opal"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="228dp"
-        android:layout_height="211dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/appNameLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/applogo" />
-
-    <TextView
-        android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="175dp"
-        android:fontFamily="@font/rubik"
-        android:text="@string/appNameLabel"
-        android:textColor="@color/HunterGreen"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/companySignInLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/rubik"
         android:text="@string/companySignInLabelText"
+        android:textAlignment="center"
         android:textColor="@color/RoyalBlue"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
-
-    <EditText
-        android:id="@+id/companyEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:hint="@string/userEmailAddressHint"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:textColorHint="@color/HunterGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companySignInLabel"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <EditText
-        android:id="@+id/companyPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:hint="@string/userPasswordHint"
-        android:inputType="numberPassword"
-        android:minHeight="48dp"
-        android:textColorHint="@color/HunterGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/userSubmitButton" />
 
     <TextView
         android:id="@+id/userSignInLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/rubik"
         android:text="@string/userSignInLabelText"
         android:textColor="@color/RoyalBlue"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appTitle" />
-
-    <EditText
-        android:id="@+id/userEmailAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:fontFamily="sans-serif"
-        android:hint="@string/userEmailAddressHint"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:textColorHint="@color/HunterGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userSignInLabel" />
-
-    <EditText
-        android:id="@+id/userPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:hint="@string/userPasswordHint"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textColorHint="@color/HunterGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmailAddress" />
-
-    <EditText
-        android:id="@+id/userPassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:hint="@string/userPasswordHint"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textColorHint="@color/HunterGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/userSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:text="@string/submitButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/userSignInLabel" />
 
     <Button
         android:id="@+id/companySubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:text="@string/submitButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/companySignInLabel" />
 
-    <Button
-        android:id="@+id/existingUserButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/exisitingUserButtonLabel"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="290dp"
+        android:layout_height="309dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companySubmitButton" />
+        app:layout_constraintTop_toBottomOf="@+id/companySubmitButton"
+        app:srcCompat="@drawable/workspace" />
 
-    <EditText
-        android:id="@+id/userRetypePassword"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="@color/HunterGreen"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
+        android:layout_marginTop="38dp"
+        android:text="@string/appNameLabel"
         android:textColor="@color/HunterGreen"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
