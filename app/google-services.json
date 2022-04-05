@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "251294197327",
+    "firebase_url": "https://workspace-ad0e1-default-rtdb.firebaseio.com",
+    "project_id": "workspace-ad0e1",
+    "storage_bucket": "workspace-ad0e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251294197327:android:229b5fc49a195fac27ec3a",
+        "android_client_info": {
+          "package_name": "com.example.hired"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251294197327-v1dc40ktvga3fjpfv43ectc3of6n5jn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9eddeT_JAP6mK9_Bzx0WQ-vBEVMWqY5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251294197327-v1dc40ktvga3fjpfv43ectc3of6n5jn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

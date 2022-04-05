@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_filters.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.226" />
+        <entry key="app/src/main/res/layout/activity_company_survey.xml" value="0.26710939269134965" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2301828356756681" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.24270833333333333" />
+        <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.24270833333333333" />
       </map>
     </option>
   </component>
