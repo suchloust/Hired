@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText userUS, userPW, companyUS, companyPW, userRTPW;
-    Button userSubButton, companySubButton,existingUSButton ;
+
 
 
     @Override
@@ -20,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button userSubButton;
+        userSubButton = (Button) findViewById(R.id.userSubmitButton);
 
 
      userSubButton.setOnClickListener(new View.OnClickListener() {
