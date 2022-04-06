@@ -16,4 +16,9 @@
     <string name="userPasswordHint">Enter Password</string>
     <string name="submitButtonLabel">Click Here</string>
     <string name="exisitingUserButtonLabel">I already have an account</string>
+    <string name="filtersStr">Filters</string>
+    <string name="likedStr">Liked Companies</string>
+    <string name="answerFieldHintStr">Enter in your response</string>
+    <string name="submitAnswerStr">Submit</string>
+    <string name="nextQuestionStr">Next</string>
 </resources>
