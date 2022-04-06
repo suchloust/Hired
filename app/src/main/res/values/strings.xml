@@ -19,4 +19,6 @@
     <string name="answerFieldHintStr">Enter in your response</string>
     <string name="submitAnswerStr">Submit</string>
     <string name="nextQuestionStr">Next</string>
+    <string name="search">Search here</string>
+    <string name="bar">Search bar</string>
 </resources>
