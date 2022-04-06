@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".activity_filters">
 
+    <SearchView
+        android:layout_width="798dp"
+        android:layout_height="1278dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
