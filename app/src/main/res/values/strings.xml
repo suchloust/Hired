@@ -21,6 +21,21 @@
     <string name="answerFieldHintStr">Enter in your response</string>
     <string name="submitAnswerStr">Submit</string>
     <string name="nextQuestionStr">Next</string>
+    <string-array name="userInterestDropdownChoices">
+        <item>None</item>
+        <item>Food Service</item>
+        <item>Hospitality</item>
+        <item>Retail</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="userSkillsDropdownChoices">
+        <item>None</item>
+        <item>Communication</item>
+        <item>Experience</item>
+        <item>Manual Labor</item>
+        <item>Handling Money</item>
+        <item>Other</item>
+    </string-array>
     <string name="search">Search here</string>
     <string name="bar">Search bar</string>
 </resources>
