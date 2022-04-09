@@ -1,4 +1,5 @@
 package com.example.hired;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
@@ -25,7 +26,7 @@ public class MultimediaPlayer extends AppCompatActivity
         setContentView(R.layout.activity_videos);
 
         //Hard coded right now but eventually should link with url company enters
-        String media_url = "www.youtube.com/watch?v=R1HW6Comeno";
+        String media_url = "www.massacademy.org";
 
         mWebView = (WebView) findViewById(R.id.webview);
         mWebView.setWebChromeClient(new WebChromeClient());
