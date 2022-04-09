@@ -1,17 +1,16 @@
 package com.example.hired;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.lang.reflect.Method;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class MultimediaPlayer extends AppCompatActivity
+public class MultimediaPlayer extends Activity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
@@ -39,7 +38,7 @@ public class MultimediaPlayer extends AppCompatActivity
         resumeBrowser();
         mWebView.loadUrl(media_url);*/
 
-        final WebView webview = (WebView) findViewById(R.id.webview);
+        final WebView webview = (WebView) findViewById(R.id.webviewer);
         webview.setWebViewClient(new WebViewClient());
 
         WebSettings websetting = webview.getSettings();
