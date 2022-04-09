@@ -1,15 +1,16 @@
 package com.example.hired;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.lang.reflect.Method;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class MultimediaPlayer extends Activity
+public class MultimediaPlayer extends AppCompatActivity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
