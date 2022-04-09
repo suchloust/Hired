@@ -2,9 +2,9 @@ package com.example.hired;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,9 +26,9 @@ public class MultimediaPlayer extends AppCompatActivity
         setContentView(R.layout.activity_videos);
 
         //Hard coded right now but eventually should link with url company enters
-        String media_url = "www.massacademy.org";
+       // String media_url = "www.massacademy.org";
 
-        mWebView = (WebView) findViewById(R.id.webview);
+        /*mWebView = (WebView) findViewById(R.id.webview);
         mWebView.setWebChromeClient(new WebChromeClient());
 
         WebSettings ws = mWebView.getSettings();
@@ -37,7 +37,14 @@ public class MultimediaPlayer extends AppCompatActivity
 
         mIsPaused = true;
         resumeBrowser();
-        mWebView.loadUrl(media_url);
+        mWebView.loadUrl(media_url);*/
+
+        final WebView webview = (WebView) findViewById(R.id.webview);
+        webview.setWebViewClient(new WebViewClient());
+
+        WebSettings websetting = webview.getSettings();
+        websetting.setJavaScriptEnabled(true);
+        webview.loadUrl("https://youtube.com/watch?v=R1HW6Comeno");
     }
 
     @Override
