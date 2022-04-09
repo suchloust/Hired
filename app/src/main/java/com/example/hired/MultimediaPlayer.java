@@ -16,11 +16,15 @@ public class MultimediaPlayer extends AppCompatActivity
     private boolean mIsPaused = false;
 
     @Override
+    /**
+     * Initializes video class
+     */
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
 
+        //Hard coded right now but eventually should link with url company enters
         String media_url = "https://www.youtube.com/watch?v=R1HW6Comeno";
 
         mWebView = (WebView) findViewById(R.id.webview);
@@ -36,6 +40,9 @@ public class MultimediaPlayer extends AppCompatActivity
     }
 
     @Override
+    /**
+     * Pauses the video
+     */
     protected void onPause()
     {
         pauseBrowser();
@@ -43,12 +50,18 @@ public class MultimediaPlayer extends AppCompatActivity
     }
 
     @Override
+    /**
+     * Resumes the video
+     */
     protected void onResume()
     {
         resumeBrowser();
         super.onResume();
     }
 
+    /**
+     * Hidden method to pause (not part of the webview class)
+     */
     private void pauseBrowser()
     {
         if (!mIsPaused)
@@ -60,6 +73,9 @@ public class MultimediaPlayer extends AppCompatActivity
         }
     }
 
+    /**
+     * Hidden method to resume (not part of the webview class)
+     */
     private void resumeBrowser()
     {
         if (mIsPaused)
@@ -71,6 +87,11 @@ public class MultimediaPlayer extends AppCompatActivity
         }
     }
 
+    /**
+     * Calls hidden method
+     * @param wv webview
+     * @param name name of method call
+     */
     private void callHiddenWebViewMethod(final WebView wv, final String name)
     {
         try
