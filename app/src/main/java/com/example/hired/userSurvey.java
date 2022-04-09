@@ -25,7 +25,7 @@ public class userSurvey extends AppCompatActivity {
         userLocation = (EditText) findViewById(R.id.userLocationInput);
         locationLabel = (TextView) findViewById(R.id.locationLabel);
         saveSurvey = (Button) findViewById(R.id.saveButton);
-
+        getPrefs(this);
         saveSurvey.setOnClickListener(new View.OnClickListener(){
 
         @Override
