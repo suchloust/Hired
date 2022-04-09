@@ -15,10 +15,11 @@ public class MultimediaPlayer extends Activity
     private WebView mWebView;
     private boolean mIsPaused = false;
 
-    @Override
+
     /**
      * Initializes video class
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -46,20 +47,22 @@ public class MultimediaPlayer extends Activity
         webview.loadUrl("https://youtube.com/watch?v=R1HW6Comeno");
     }
 
-    @Override
     /**
      * Pauses the screen
      */
+    @Override
+
     protected void onPause()
     {
         pauseBrowser();
         super.onPause();
     }
 
-    @Override
+
     /**
      * Resumes the screen
      */
+    @Override
     protected void onResume()
     {
         resumeBrowser();
