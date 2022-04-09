@@ -41,7 +41,7 @@ public class MultimediaPlayer extends AppCompatActivity
 
     @Override
     /**
-     * Pauses the video
+     * Pauses the screen
      */
     protected void onPause()
     {
@@ -51,7 +51,7 @@ public class MultimediaPlayer extends AppCompatActivity
 
     @Override
     /**
-     * Resumes the video
+     * Resumes the screen
      */
     protected void onResume()
     {
@@ -60,7 +60,7 @@ public class MultimediaPlayer extends AppCompatActivity
     }
 
     /**
-     * Hidden method to pause (not part of the webview class)
+     * Hidden method to pause video
      */
     private void pauseBrowser()
     {
@@ -74,7 +74,7 @@ public class MultimediaPlayer extends AppCompatActivity
     }
 
     /**
-     * Hidden method to resume (not part of the webview class)
+     * Hidden method to resume video
      */
     private void resumeBrowser()
     {

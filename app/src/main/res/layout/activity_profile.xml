@@ -155,7 +155,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="196dp"
         android:layout_marginTop="592dp"
+        android:layout_marginEnd="200dp"
         android:text="Start finding a job!"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
