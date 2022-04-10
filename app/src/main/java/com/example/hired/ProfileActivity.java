@@ -13,9 +13,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class ProfileActivity extends AppCompatActivity {
     Button filtersBut;
-    TextView locationText;
+    TextView locationText, ageText, fieldPref, skillPref1, skillPref2, skillPref3, skillPref4;
 
 
     @Override
@@ -24,7 +26,18 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         filtersBut = (Button) findViewById(R.id.filtersButton);
         locationText = (TextView) findViewById(R.id.locationLabel);
-        locationText.setText(getPrefs(this));
+        fieldPref = (TextView) findViewById(R.id.filter1);
+        skillPref1 = (TextView) findViewById(R.id.filter);
+        skillPref2 = (TextView) findViewById(R.id.filter2);
+        skillPref3 = (TextView) findViewById(R.id.filter3);
+        ageText = (TextView) findViewById(R.id.ageLabel);
+        locationText.setText(getPrefs(this, "locationLabel"));
+        ageText.setText(getPrefs(this, "ageLabel"));
+
+        skillPref1.setText(getPrefs(this, "skill1Label"));
+        skillPref2.setText(getPrefs(this, "skill2Label"));
+        skillPref3.setText(getPrefs(this, "skill3Label"));
+
         filtersBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +52,12 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        locationText.setText(getPrefs(this));
+        locationText.setText(getPrefs(this, "locationLabel"));
+        ageText.setText(getPrefs(this, "ageLabel"));
+        fieldPref.setText(getPrefs(this, "interestLabel"));
+        skillPref1.setText(getPrefs(this, "skill1Label"));
+        skillPref2.setText(getPrefs(this, "skill2Label"));
+        skillPref3.setText(getPrefs(this, "skill3Label"));
     }
 
 }
