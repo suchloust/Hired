@@ -40,8 +40,8 @@ public class MultimediaPlayer extends Activity
         //Hard coded right now but eventually should link with url company enters
        // String media_url = "www.massacademy.org";
 
-        /*mWebView = (WebView) findViewById(R.id.webview);
-        mWebView.setWebChromeClient(new WebChromeClient());
+        mWebView = (WebView) findViewById(R.id.webviewer);
+        /*mWebView.setWebChromeClient(new WebChromeClient());
 
         WebSettings ws = mWebView.getSettings();
         ws.setBuiltInZoomControls(true);
