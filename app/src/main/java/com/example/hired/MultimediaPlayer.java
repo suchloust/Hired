@@ -44,14 +44,13 @@ public class MultimediaPlayer extends Activity
 
         WebSettings websetting = webview.getSettings();
         websetting.setJavaScriptEnabled(true);
-        webview.loadUrl("https://youtube.com/watch?v=R1HW6Comeno");
+        webview.loadUrl("mrellis.com:8000");
     }
 
     /**
      * Pauses the screen
      */
     @Override
-
     protected void onPause()
     {
         pauseBrowser();
