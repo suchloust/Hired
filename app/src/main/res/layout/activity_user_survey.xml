@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:isScrollContainer="true"
     tools:context=".userSurvey">
 
     <TextView
@@ -24,11 +25,25 @@
         android:id="@+id/q1Text"
         android:layout_width="328dp"
         android:layout_height="70dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:text="What geographic area would you like to work in?"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAgeInput" />
+
+    <TextView
+        android:id="@+id/qAgeText"
+        android:layout_width="331dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:text="How old are you?"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel" />
 
@@ -38,6 +53,7 @@
         android:layout_height="72dp"
         android:layout_marginTop="24dp"
         android:text="What types of jobs are you interested in?"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +65,7 @@
         android:layout_height="37dp"
         android:layout_marginTop="24dp"
         android:text="What are some of your skills?"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -84,10 +101,9 @@
         android:id="@+id/s1Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="10dp"
         android:text="Communication"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/q2Text2" />
 
@@ -95,44 +111,55 @@
         android:id="@+id/s3Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
         android:text="Manual Labor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s4Check"
         app:layout_constraintTop_toBottomOf="@+id/s2Check" />
 
     <CheckBox
         android:id="@+id/s2Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
         android:text="Work Experience"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s1Check" />
+        app:layout_constraintStart_toEndOf="@+id/s1Check"
+        app:layout_constraintTop_toBottomOf="@+id/q2Text2" />
 
     <CheckBox
         android:id="@+id/s4Check"
         android:layout_width="139dp"
         android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="10dp"
         android:text="Handling Money"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s3Check" />
+        app:layout_constraintTop_toBottomOf="@+id/s1Check" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s4Check" />
+        app:layout_constraintTop_toBottomOf="@+id/s3Check" />
+
+    <EditText
+        android:id="@+id/userAgeInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Enter Age:"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qAgeText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
