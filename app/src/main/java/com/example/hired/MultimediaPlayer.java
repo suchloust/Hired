@@ -57,7 +57,7 @@ public class MultimediaPlayer extends Activity
         WebSettings websetting = webview.getSettings();
         websetting.setJavaScriptEnabled(true);
         websetting.setDomStorageEnabled(true);
-        webview.loadUrl("mrellis.com:8000");
+        webview.loadUrl("https://youtube.com/watch?v=R1HW6Comeno");
     }
 
     /**
