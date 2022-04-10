@@ -82,7 +82,7 @@ public class MultimediaPlayer extends Activity
     }
 
     /**
-     * Hidden method to pause video
+     * Hidden method to pause webpage
      */
     private void pauseBrowser()
     {
@@ -96,7 +96,7 @@ public class MultimediaPlayer extends Activity
     }
 
     /**
-     * Hidden method to resume video
+     * Hidden method to resume webpage
      */
     private void resumeBrowser()
     {
