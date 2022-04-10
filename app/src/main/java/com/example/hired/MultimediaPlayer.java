@@ -2,10 +2,13 @@ package com.example.hired;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 
 import java.lang.reflect.Method;
 
@@ -14,6 +17,7 @@ public class MultimediaPlayer extends Activity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
+    Button userBut;
 
 
     /**
@@ -24,6 +28,14 @@ public class MultimediaPlayer extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
+        userBut = (Button) findViewById(R.id.back_user);
+
+        userBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MultimediaPlayer.class);
+                startActivity(intent);
+            }});
 
         //Hard coded right now but eventually should link with url company enters
        // String media_url = "www.massacademy.org";
@@ -44,6 +56,7 @@ public class MultimediaPlayer extends Activity
 
         WebSettings websetting = webview.getSettings();
         websetting.setJavaScriptEnabled(true);
+        websetting.setDomStorageEnabled(true);
         webview.loadUrl("mrellis.com:8000");
     }
 
