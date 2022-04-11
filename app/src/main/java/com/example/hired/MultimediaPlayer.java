@@ -31,13 +31,28 @@ public class MultimediaPlayer extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
         userBut = (Button) findViewById(R.id.back_user);
-        previous = (Button) findViewById(R.id.prevButton);
-        previous = (Button) findViewById(R.id.proceedButton);
+        previous = (Button) findViewById(R.id.previous_video);
+        advance = (Button) findViewById(R.id.proceed);
 
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                startActivity(intent);
+            }});
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //eventually code to go to previous video
+                //maybe don't show on first vid page? bc there's no previous then
+                Intent intent = new Intent(getApplicationContext(), MultimediaPlayer.class);
+                startActivity(intent);
+            }});
+        advance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //eventually code to go to next video
+                Intent intent = new Intent(getApplicationContext(), MultimediaPlayer.class);
                 startActivity(intent);
             }});
 
