@@ -18,6 +18,8 @@ public class MultimediaPlayer extends Activity
     private WebView mWebView;
     private boolean mIsPaused = false;
     Button userBut;
+    Button previous;
+    Button advance;
 
 
     /**
@@ -29,6 +31,8 @@ public class MultimediaPlayer extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
         userBut = (Button) findViewById(R.id.back_user);
+        previous = (Button) findViewById(R.id.prevButton);
+        previous = (Button) findViewById(R.id.proceedButton);
 
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
