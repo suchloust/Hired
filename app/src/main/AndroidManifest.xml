@@ -39,7 +39,7 @@
         <activity
         android:name=".ProfileActivity"
         android:exported="false" />
-        <activity android:name=".MultimediaPlayer"
+        <activity android:name=".VideoDisplay"
             android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"

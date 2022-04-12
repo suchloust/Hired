@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class MultimediaPlayer extends Activity
+public class VideoDisplay extends Activity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
@@ -46,7 +46,7 @@ public class MultimediaPlayer extends Activity
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MultimediaPlayer.class);
+                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
                 startActivity(intent);
             }});
         previous.setOnClickListener(new View.OnClickListener() {

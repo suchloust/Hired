@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         videosBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MultimediaPlayer.class);
+                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
                 startActivity(intent);
             }
 
