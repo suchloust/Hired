@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class MultimediaPlayer extends Activity
@@ -20,6 +21,9 @@ public class MultimediaPlayer extends Activity
     Button userBut;
     Button previous;
     Button advance;
+    int url = 0;
+    ArrayList<String> urls;
+
 
 
     /**
@@ -28,6 +32,11 @@ public class MultimediaPlayer extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        urls = new ArrayList<String>();
+        //hard coding urls so we can test the "Next" and "Previous" buttons
+        urls.add("https://youtube.com/watch?v=R1HW6Comeno");
+        urls.add("https://youtube.com/watch?v=oARjNQq8KAQ");
+        urls.add("https://youtube.com/watch?v=3IYe33_31i8&t=7s");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
         userBut = (Button) findViewById(R.id.back_user);
@@ -67,7 +76,8 @@ public class MultimediaPlayer extends Activity
         websetting.setDomStorageEnabled(true);
         mIsPaused = true;
         resumeBrowser();
-        webview.loadUrl("https://youtube.com/watch?v=R1HW6Comeno");
+        webview.loadUrl(urls.get(url));
+        url++;
     }
 
     /**
