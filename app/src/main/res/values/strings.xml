@@ -25,8 +25,16 @@
         <item>None</item>
         <item>Food Service</item>
         <item>Hospitality</item>
-        <item>Retail</item>
+        <item>Retail/Sales</item>
+        <item>Public Health/Medical</item>
         <item>Other</item>
+    </string-array>
+    <string-array name="userExperienceDropdownChoices">
+        <item>None</item>
+        <item>No prior experience</item>
+        <item>Have held a non-paying internship/job</item>
+        <item>Have held a paying job</item>
+        <item>Have held a paying job within the target industry</item>
     </string-array>
     <string-array name="userSkillsInteraction">
         <item>None</item>

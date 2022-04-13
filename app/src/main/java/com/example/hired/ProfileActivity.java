@@ -1,7 +1,6 @@
 package com.example.hired;
 
 import static com.example.hired.userSurvey.getPrefs;
-import static com.example.hired.userSurvey.setPrefs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 public class ProfileActivity extends AppCompatActivity {
     Button filtersBut;
@@ -43,8 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intenty = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intenty);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
