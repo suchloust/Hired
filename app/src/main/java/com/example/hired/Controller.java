@@ -24,4 +24,9 @@ public class Controller extends android.app.Application{
         questionNumber++;
         return compQuestions.get(qNum);
     }
+
+    public int getQuestionNumber(){
+
+        return questionNumber-1;
+    }
 }

@@ -86,9 +86,9 @@ public class User {
 	//How many matches do we consider a "match" or compatible company? Should we return a percent match?
 	public int matchWithCompany(Company company) {
 		int compatibilityScore = 0;
-		if (age > company.getAgeReq()) {
+		/*if (age.equals(company.getAgeReq())) {
 			compatibilityScore++;
-		}
+		}*/
 		if (location.equals(company.getLocation())) {
 			//Did this now with a String match, but will refine in future.
 			compatibilityScore++;

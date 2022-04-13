@@ -11,7 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hired">
         <activity
+            android:name=".CompanySurveyPage"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Explore"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CompanySurvey"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
