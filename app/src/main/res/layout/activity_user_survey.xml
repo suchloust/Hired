@@ -235,4 +235,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/minilogo" />
 
+    <TextView
+        android:id="@+id/q3Text"
+        android:layout_width="324dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="23dp"
+        android:fontFamily="@font/rubik"
+        android:text="How experienced are you?"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/q2Text4" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="15dp"
+        android:entries="@array/userExperienceDropdownChoices"
+        app:layout_constraintStart_toEndOf="@+id/q3Text"
+        app:layout_constraintTop_toBottomOf="@+id/skill3spinner" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
