@@ -36,13 +36,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
     public void performCompanySurvey(View v){
         Intent intent = new Intent(this, CompanySurveyPage.class);
         startActivity(intent);
-    }
-
-    public void performCompanyProfile(View v){
-        Intent intent = new Intent(this, CompanyProfile.class);
-        startActivity(intent);
-    }
-}
+    }}
