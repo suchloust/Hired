@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hired">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".Controller"
         android:allowBackup="true"
@@ -19,11 +19,19 @@
         <activity
             android:name=".Explore"
             android:exported="false" />
+        <activity android:name=".VideoDisplay"
+            android:exported="false"/>
+        <activity
+            android:name=".CompanySurvey"
+            android:exported="false" />
+        <activity
+            android:name=".userSurvey"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".CompanySurvey"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -38,6 +46,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hired</string>
+    <string name="app_name">WorkSpace</string>
     <string name="appNameLabel">WorkSpace</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -58,5 +58,36 @@
 
 
 
+
+    <string-array name="userInterestDropdownChoices">
+        <item>None</item>
+        <item>Food Service</item>
+        <item>Hospitality</item>
+        <item>Retail/Sales</item>
+        <item>Public Health/Medical</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="userExperienceDropdownChoices">
+        <item>None</item>
+        <item>No prior experience</item>
+        <item>Have held a non-paying internship/job</item>
+        <item>Have held a paying job</item>
+        <item>Have held a paying job within the target industry</item>
+    </string-array>
+    <string-array name="userSkillsInteraction">
+        <item>None</item>
+        <item>Leader</item>
+        <item>Listener</item>
+    </string-array>
+    <string-array name="userSkillsInto">
+        <item>None</item>
+        <item>Hands-On</item>
+        <item>Hands-Off</item>
+    </string-array>
+    <string-array name="userSkillsFocus">
+        <item>None</item>
+        <item>Analytical</item>
+        <item>Problem-Solver</item>
+    </string-array>
 
 </resources>
