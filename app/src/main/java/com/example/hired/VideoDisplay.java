@@ -32,6 +32,8 @@ public class VideoDisplay extends Activity
     {
         url = 0;
         urls = new ArrayList<String>();
+        //eventually fetch urls from company survey
+        //hard coding from poorvi's youtube channel to test
         urls.add("https://youtube.com/watch?v=R1HW6Comeno");
         urls.add("https://youtube.com/watch?v=oARjNQq8KAQ");
         urls.add("https://youtube.com/watch?v=3IYe33_31i8&t=7s");
@@ -75,6 +77,10 @@ public class VideoDisplay extends Activity
 
     }
 
+    /**
+     * Plays the next video
+     * @param url_list list of youtube urls
+     */
     public void advanceScreen(ArrayList<String> url_list)
     {
         resumeBrowser();
@@ -85,13 +91,16 @@ public class VideoDisplay extends Activity
         //or don't show the next button on the last video
     }
 
+    /**
+     * Plays the previous video
+     * @param url_list list of youtube urls
+     */
     public void previousScreen(ArrayList<String> url_list)
     {
         resumeBrowser();
         url--;
         if (url>0)
         mWebView.loadUrl(url_list.get(url));
-
         //eventually add a message saying "this is the first video"
         //or maybe don't show the previous button on the first video
     }
@@ -139,7 +148,7 @@ public class VideoDisplay extends Activity
     {
         if (mIsPaused)
         {
-            // resume flash and javascript etc
+            //resume flash and javascript etc
             callHiddenWebViewMethod(mWebView, "onResume");
             mWebView.resumeTimers();
             mIsPaused = false;
