@@ -12,286 +12,251 @@
         android:id="@+id/userSurveyLabel"
         android:layout_width="314dp"
         android:layout_height="39dp"
-        android:layout_marginTop="93dp"
-        android:text="Filters"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/rubik"
+        android:text="User Information"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/q1Text"
-        android:layout_width="328dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="24dp"
-        android:text="What geographic area would you like to work in?"
-        android:textAlignment="center"
+    <Spinner
+        android:id="@+id/interestSpinner"
+        android:layout_width="208dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:entries="@array/userInterestDropdownChoices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/q2Text"
+        app:layout_constraintTop_toBottomOf="@+id/userLocationInput" />
+
+    <Spinner
+        android:id="@+id/skill2spinner"
+        android:layout_width="213dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="35dp"
+        android:entries="@array/userSkillsInto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/q2Text3"
+        app:layout_constraintTop_toBottomOf="@+id/skill1spinner" />
+
+    <Spinner
+        android:id="@+id/skill1spinner"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="35dp"
+        android:entries="@array/userSkillsInteraction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/q2Text2"
+        app:layout_constraintTop_toBottomOf="@+id/interestSpinner" />
+
+    <EditText
+        android:id="@+id/userLocationInput"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Enter Location:"
+        android:inputType="textPostalAddress"
+        android:minHeight="48dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/q1Text"
         app:layout_constraintTop_toBottomOf="@+id/userAgeInput" />
 
     <TextView
         android:id="@+id/qAgeText"
-        android:layout_width="331dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="20dp"
-        android:text="How old are you?"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        android:layout_width="75dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="Age:"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/userAgeInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/qNameText" />
 
     <TextView
-        android:id="@+id/q2Text"
-        android:layout_width="321dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="24dp"
-        android:text="What types of jobs are you interested in?"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/qNameText"
+        android:layout_width="95dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/rubik"
+        android:text="Name:"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userLocationInput" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/userAgeInput"
+        android:layout_width="438dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:hint="Enter Age:"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/qAgeText"
+        app:layout_constraintTop_toBottomOf="@+id/userNameInput" />
 
     <TextView
         android:id="@+id/q2Text2"
         android:layout_width="325dp"
         android:layout_height="37dp"
-        android:layout_marginTop="24dp"
-        android:text="What are some of your skills?"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/interestSpinner" />
-
-    <EditText
-        android:id="@+id/userLocationInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Enter Location:"
-        android:inputType="textPostalAddress"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q1Text" />
-
-    <Spinner
-        android:id="@+id/interestSpinner"
-        android:layout_width="208dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:entries="@array/userInterestDropdownChoices"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="13dp"
+        android:fontFamily="@font/rubik"
+        android:text="How outgoing are you?"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/skill1spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/q2Text" />
 
-    <CheckBox
-        android:id="@+id/s1Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="10dp"
-        android:text="Communication"
+    <TextView
+        android:id="@+id/q2Text4"
+        android:layout_width="325dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="11dp"
+        android:fontFamily="@font/rubik"
+        android:text="Do you consider yourself more..."
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/skill3spinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text2" />
+        app:layout_constraintTop_toBottomOf="@+id/q2Text" />
 
-    <CheckBox
-        android:id="@+id/s3Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:text="Manual Labor"
-        app:layout_constraintStart_toEndOf="@+id/s4Check"
-        app:layout_constraintTop_toBottomOf="@+id/s2Check" />
-
-    <CheckBox
-        android:id="@+id/s2Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:text="Work Experience"
-        app:layout_constraintStart_toEndOf="@+id/s1Check"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text2" />
-
-    <CheckBox
-        android:id="@+id/s4Check"
-        android:layout_width="139dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="10dp"
-        android:text="Handling Money"
+    <TextView
+        android:id="@+id/q2Text3"
+        android:layout_width="328dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="9dp"
+        android:fontFamily="@font/rubik"
+        android:text="How do you see yourself working?"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/skill2spinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s1Check" />
+        app:layout_constraintTop_toBottomOf="@+id/q2Text" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="15dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s3Check" />
-
-    <EditText
-        android:id="@+id/userAgeInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Enter Age:"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/qAgeText" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-    android:layout_height="match_parent"
-    tools:context=".userSurvey">
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/userSurveyLabel"
-        android:layout_width="314dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="93dp"
-        android:text="Filters"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        android:id="@+id/q2Text"
+        android:layout_width="323dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="What types of jobs are you interested in?"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/q1Text" />
+
+    <Spinner
+        android:id="@+id/skill3spinner"
+        android:layout_width="214dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="35dp"
+        android:entries="@array/userSkillsFocus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/q2Text4"
+        app:layout_constraintTop_toBottomOf="@+id/skill2spinner" />
 
     <TextView
         android:id="@+id/q1Text"
         android:layout_width="328dp"
         android:layout_height="70dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/rubik"
         android:text="What geographic area would you like to work in?"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textAlignment="textStart"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/userLocationInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel" />
-
-    <TextView
-        android:id="@+id/q2Text"
-        android:layout_width="321dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="24dp"
-        android:text="What types of jobs are you interested in?"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userLocationInput" />
-
-    <TextView
-        android:id="@+id/q2Text2"
-        android:layout_width="325dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="24dp"
-        android:text="What are some of your skills?"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/interestSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/userAgeInput" />
 
     <EditText
-        android:id="@+id/userLocationInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:id="@+id/userNameInput"
+        android:layout_width="439dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="29dp"
         android:ems="10"
-        android:hint="Enter Location:"
-        android:inputType="textPostalAddress"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:fontFamily="@font/rubik"
+        android:hint="Enter Name:"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/qNameText"
+        app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel" />
+
+    <ImageView
+        android:id="@+id/miniLogo"
+        android:layout_width="121dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q1Text" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minilogo" />
+
+    <TextView
+        android:id="@+id/q3Text"
+        android:layout_width="324dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="23dp"
+        android:fontFamily="@font/rubik"
+        android:text="How experienced are you?"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/q2Text4" />
 
     <Spinner
-        android:id="@+id/interestSpinner"
-        android:layout_width="208dp"
+        android:id="@+id/spinner"
+        android:layout_width="213dp"
         android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:entries="@array/userInterestDropdownChoices"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text" />
-
-    <CheckBox
-        android:id="@+id/s1Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
         android:layout_marginTop="15dp"
-        android:text="Communication"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text2" />
-
-    <CheckBox
-        android:id="@+id/s3Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Manual Labor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s2Check" />
-
-    <CheckBox
-        android:id="@+id/s2Check"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Work Experience"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s1Check" />
-
-    <CheckBox
-        android:id="@+id/s4Check"
-        android:layout_width="139dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:text="Handling Money"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s3Check" />
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Done"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s4Check" />
+        android:entries="@array/userExperienceDropdownChoices"
+        app:layout_constraintStart_toEndOf="@+id/q3Text"
+        app:layout_constraintTop_toBottomOf="@+id/skill3spinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
