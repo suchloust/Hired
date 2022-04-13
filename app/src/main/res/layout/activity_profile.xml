@@ -14,17 +14,18 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/minilogo" />
+
 
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/rubik"
         android:text="name"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,28 +44,13 @@
         app:srcCompat="@drawable/ic_action_name"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="496dp"
-        android:background="@drawable/bg_circle"
-        android:outlineProvider="background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/profilepic" />
-
     <TextView
         android:id="@+id/filter3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/rubik"
         android:text="from survey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
@@ -75,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/rubik"
         android:text="from survey"
         app:layout_constraintEnd_toStartOf="@+id/filter3"
         app:layout_constraintStart_toEndOf="@+id/filter"
@@ -87,6 +74,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/rubik"
         android:text="from survey"
         app:layout_constraintEnd_toStartOf="@+id/filter"
         app:layout_constraintHorizontal_bias="0.666"
@@ -99,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/rubik"
         android:text="from survey"
         app:layout_constraintEnd_toStartOf="@+id/filter2"
         app:layout_constraintStart_toEndOf="@+id/filter1"
@@ -110,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/rubik"
         android:text="@string/likedStr"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,18 +110,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/rubik"
         android:text="location from survey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/ageLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/rubik"
         android:text="age from survey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,8 +137,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/rubik"
         android:text="Filters"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="317dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="18dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoHomeButton"
+        app:srcCompat="@drawable/profilecase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,15 +10,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class userSurvey extends AppCompatActivity {
 
-    EditText userLocation, userAge;
+    EditText userLocation, userAge, userName;
     TextView locationLabel;
-    Spinner fieldPreference;
-    Button saveSurvey, skill1, skill2, skill3, skill4;
+    Spinner fieldPreference, skill1, skill2, skill3;
+    Button saveSurvey;
+    ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,50 +30,58 @@ public class userSurvey extends AppCompatActivity {
         userLocation = (EditText) findViewById(R.id.userLocationInput);
         userAge = (EditText) findViewById(R.id.userAgeInput);
         locationLabel = (TextView) findViewById(R.id.locationLabel);
+        userName = (EditText) findViewById(R.id.userNameInput);
         saveSurvey = (Button) findViewById(R.id.saveButton);
         fieldPreference = (Spinner) findViewById(R.id.interestSpinner);
-        skill1 = (Button) findViewById(R.id.s1Check);
-        skill2 = (Button) findViewById(R.id.s2Check);
-        skill3 = (Button) findViewById(R.id.s3Check);
-        skill4 = (Button) findViewById(R.id.s4Check);
+        skill1 = (Spinner) findViewById(R.id.skill1spinner);
+        skill2 = (Spinner) findViewById(R.id.skill2spinner);
+        skill3 = (Spinner) findViewById(R.id.skill3spinner);
+        logo = (ImageView) findViewById(R.id.miniLogo);
+        logo.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intenty = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intenty);
+            }
+        });
         saveSurvey.setOnClickListener(new View.OnClickListener(){
 
         @Override
         public void onClick (View view){
             Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             startActivity(intent);
+            setPrefs(getApplicationContext(), userName.getText().toString(), "nameLabel");
             setPrefs(getApplicationContext(), userLocation.getText().toString(), "locationLabel");
             setPrefs(getApplicationContext(), userAge.getText().toString(), "ageLabel");
             setPrefs(getApplicationContext(), fieldPreference.getSelectedItem().toString(), "interestLabel");
-            setPrefs(getApplicationContext(), skill1.getText().toString(), "skill1Label");
-            setPrefs(getApplicationContext(), skill2.getText().toString(), "skill2Label");
-            setPrefs(getApplicationContext(), skill3.getText().toString(), "skill3Label");
-            setPrefs(getApplicationContext(), skill4.getText().toString(), "skill4Label");
+            setPrefs(getApplicationContext(), skill1.getSelectedItem().toString(), "skill1Label");
+            setPrefs(getApplicationContext(), skill2.getSelectedItem().toString(), "skill2Label");
+            setPrefs(getApplicationContext(), skill3.getSelectedItem().toString(), "skill3Label");
         }
     });
+
+
 }
 
     @Override
     protected void onResume() {
         super.onResume();
+        userName.setText(getPrefs(this, "nameLabel"));
         userLocation.setText(getPrefs(this, "locationLabel"));
         userAge.setText(getPrefs(this, "ageLabel"));
-        //skill1.setText(getPrefs(this, "skill1Label");
-
-        //int spinPosition =  fieldPreference.getSelectedItemPosition();
-        //fieldPreference.setSelection(spinPosition);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        setPrefs(getApplicationContext(), userName.getText().toString(), "nameLabel");
         setPrefs(getApplicationContext(), userLocation.getText().toString(), "locationLabel");
         setPrefs(getApplicationContext(), userAge.getText().toString(), "ageLabel");
         setPrefs(getApplicationContext(), fieldPreference.getSelectedItem().toString(), "interestLabel");
-        setPrefs(getApplicationContext(), skill1.getText().toString(), "skill1Label");
-        setPrefs(getApplicationContext(), skill2.getText().toString(), "skill2Label");
-        setPrefs(getApplicationContext(), skill3.getText().toString(), "skill3Label");
-        setPrefs(getApplicationContext(), skill4.getText().toString(), "skill4Label");
+        setPrefs(getApplicationContext(), skill1.getSelectedItem().toString(), "skill1Label");
+        setPrefs(getApplicationContext(), skill2.getSelectedItem().toString(), "skill2Label");
+        setPrefs(getApplicationContext(), skill3.getSelectedItem().toString(), "skill3Label");
 
     }
 

@@ -28,12 +28,20 @@
         <item>Retail</item>
         <item>Other</item>
     </string-array>
-    <string-array name="userSkillsDropdownChoices">
+    <string-array name="userSkillsInteraction">
         <item>None</item>
-        <item>Communication</item>
-        <item>Experience</item>
-        <item>Manual Labor</item>
-        <item>Handling Money</item>
-        <item>Other</item>
+        <item>Leader</item>
+        <item>Listener</item>
     </string-array>
+    <string-array name="userSkillsInto">
+        <item>None</item>
+        <item>Hands-On</item>
+        <item>Hands-Off</item>
+    </string-array>
+    <string-array name="userSkillsFocus">
+        <item>None</item>
+        <item>Analytical</item>
+        <item>Problem-Solver</item>
+    </string-array>
+
 </resources>
