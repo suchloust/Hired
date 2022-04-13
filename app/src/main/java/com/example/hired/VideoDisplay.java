@@ -48,7 +48,7 @@ public class VideoDisplay extends Activity
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
             }});
         previous.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +99,7 @@ public class VideoDisplay extends Activity
     {
         resumeBrowser();
         url--;
-        if (url>0)
+        if (url>-1)
         mWebView.loadUrl(url_list.get(url));
         //eventually add a message saying "this is the first video"
         //or maybe don't show the previous button on the first video
