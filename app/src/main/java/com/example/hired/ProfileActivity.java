@@ -18,6 +18,14 @@ import org.w3c.dom.Text;
 public class ProfileActivity extends AppCompatActivity {
     Button filtersBut;
     TextView locationText, ageText, fieldPref, skillPref1, skillPref2, skillPref3, skillPref4;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ProfileActivity extends AppCompatActivity {
+    Button filtersBut;
+    Button videosBut;
+    TextView locationText;
 
 
     @Override
@@ -38,10 +46,21 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref2.setText(getPrefs(this, "skill2Label"));
         skillPref3.setText(getPrefs(this, "skill3Label"));
 
+        videosBut = (Button) findViewById(R.id.videos_button);
+        locationText = (TextView) findViewById(R.id.locationLabel);
+        locationText.setText(getPrefs(this));
         filtersBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), userSurvey.class);
+                startActivity(intent);
+            }
+
+        });
+        videosBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
                 startActivity(intent);
             }
 
@@ -58,6 +77,7 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref1.setText(getPrefs(this, "skill1Label"));
         skillPref2.setText(getPrefs(this, "skill2Label"));
         skillPref3.setText(getPrefs(this, "skill3Label"));
+        locationText.setText(getPrefs(this));
     }
 
 }

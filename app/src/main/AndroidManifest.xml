@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hired">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hired">
-        <activity
-            android:name=".activity_filters"
-            android:exported="false">
-                <intent-filter>
-                    <action android:name="android.intent.action.SEARCH" />
-                </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
-        </activity>
         <activity
             android:name=".CompanySurvey"
             android:exported="false" />
@@ -42,9 +33,15 @@
         <activity
             android:name=".userSurvey"
             android:exported="false" />
+        <activity
+        android:name=".ProfileActivity"
+        android:exported="false" />
+        <activity android:name=".VideoDisplay"
+            android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
