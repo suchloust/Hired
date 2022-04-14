@@ -3,9 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_filters.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.226" />
+        <entry key="app/src/main/res/layout/activity_company_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_company_survey.xml" value="0.26710939269134965" />
+        <entry key="app/src/main/res/layout/activity_company_survey_page.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/activity_explore.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_filters.xml" value="0.22056159420289856" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33706003824869796" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2301828356756681" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.24270833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.128" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_main.xml" value="0.264" />
