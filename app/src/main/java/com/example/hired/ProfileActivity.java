@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 public class ProfileActivity extends AppCompatActivity {
-    Button filtersBut;
+    Button filtersBut, videosBut;
     TextView locationText, ageText, fieldPref, skillPref1, skillPref2, skillPref3, nameText;
     ImageView logo;
 
@@ -29,6 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref1 = (TextView) findViewById(R.id.filter);
         skillPref2 = (TextView) findViewById(R.id.filter2);
         skillPref3 = (TextView) findViewById(R.id.filter3);
+        videosBut = (Button) findViewById(R.id.videos_button);
         ageText = (TextView) findViewById(R.id.ageLabel);
         locationText.setText(getPrefs(this, "locationLabel"));
         ageText.setText(getPrefs(this, "ageLabel"));
@@ -54,6 +55,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         });
 
+        videosBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
+                startActivity(intent);
+            }});
     }
 
     @Override

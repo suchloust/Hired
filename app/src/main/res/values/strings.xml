@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hired</string>
+    <string name="app_name">WorkSpace</string>
     <string name="appNameLabel">WorkSpace</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
@@ -14,7 +14,7 @@
     <string name="companySignInLabelText">Start searching for employees</string>
     <string name="userEmailAddressHint">Enter Email Address</string>
     <string name="userPasswordHint">Enter Password</string>
-    <string name="submitButtonLabel">Click Here</string>
+    <string name="submitButtonLabel">Get Started</string>
     <string name="exisitingUserButtonLabel">I already have an account</string>
     <string name="filtersStr">Filters</string>
     <string name="likedStr">Liked Companies</string>
