@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hired">
+        <activity android:name=".VideoDisplay"
+            android:exported="false"/>
         <activity
             android:name=".CompanySurvey"
             android:exported="false" />
@@ -19,6 +21,9 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -27,11 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-        android:name=".ProfileActivity"
-        android:exported="false" />
-        <activity android:name=".VideoDisplay"
-            android:exported="false"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
