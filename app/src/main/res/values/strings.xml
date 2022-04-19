@@ -19,8 +19,46 @@
     <string name="filtersStr">Filters</string>
     <string name="likedStr">Liked Companies</string>
     <string name="answerFieldHintStr">Enter in your response</string>
-    <string name="submitAnswerStr">Submit</string>
+    <string name="submitAnswerStr">Save</string>
     <string name="nextQuestionStr">Next</string>
+    <string name="companyInfoLabel">Business Information</string>
+    <string name="experienceLabelStr">Desired Experience</string>
+    <string name="videoLabelStr">Uploaded Videos</string>
+    <string name="minimumAgeLabelStr">Minimum working age:</string>
+    <string name="locationLabelStr">Company Location:</string>
+    <string name="companyPageLabelStr">Company Information</string>
+    <string name="companyNameLabelStr">Company Name:</string>
+    <string name="enterCompanyNameHintStr">Enter the company name</string>
+    <string name="companyEmailLabelStr">Company Email:</string>
+    <string name="enterCompanyEmailHint">Enter in valid email address</string>
+    <string name="Question3">What is the minimum age requirement for your workplace?</string>
+    <string name="mimAgeLabelHint">Minimum working age</string>
+    <string name="Question4">Company Location:</string>
+    <string name="enterCompanyAddressHint">Enter street</string>
+    <string name="enterCompanyCityHint">Enter city</string>
+    <string name="enterCompanyStateHint">Enter state</string>
+    <string name="enterCompanyZipCodeHint">Enter zip code</string>
+    <string name="Question7">What is the experience requirements you have for employees?</string>
+    <string name="Question8">What field of occupation does your company fall in?</string>
+
+    <string-array name="experienceLevels">
+        <item>No prior experience.</item>
+        <item>Have held a non-paying/internship job</item>
+        <item>Have held a paying job</item>
+        <item>Have experience within the industry holding a paying job</item>
+    </string-array>
+
+    <string-array name="occupationTypes">
+        <item>Retail/Sales</item>
+        <item>Food services</item>
+        <item>Hospitality industries</item>
+        <item>Janitorial services</item>
+        <item>Public health/Medical</item>
+    </string-array>
+
+
+
+
     <string-array name="userInterestDropdownChoices">
         <item>None</item>
         <item>Food Service</item>

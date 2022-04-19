@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundTint="@color/Opal"
+    android:onClick="performCompanySurvey"
     tools:context=".MainActivity">
 
     <TextView
@@ -46,13 +47,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userSignInLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/userSignInLabel"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/companySubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:onClick="performCompanySurvey"
         android:text="@string/submitButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -65,10 +68,11 @@
         android:layout_height="309dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companySubmitButton"
-        app:srcCompat="@drawable/workspace" />
+        app:srcCompat="@drawable/workspace"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView"
