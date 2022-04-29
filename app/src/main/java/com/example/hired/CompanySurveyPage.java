@@ -41,6 +41,10 @@ public class CompanySurveyPage extends AppCompatActivity {
             company.setEmail(companyEmail);
         Log.d("CompanySurveyPage", companyEmail);
 
+        EditText companyURLRaw = findViewById(R.id.companyURLField);
+        String companyUrl = companyNameRaw.getText().toString();
+        company.setUrl(companyUrl);
+
 
            EditText minAgeRaw = findViewById(R.id.ageMinimum);
             String ageMin = minAgeRaw.getText().toString();
@@ -81,6 +85,8 @@ public class CompanySurveyPage extends AppCompatActivity {
             child.push().setValue(company);
 
             Log.d("CompanySurveyPage", "Exited the method");
+
+        Toast.makeText(getApplicationContext(),"Saved",Toast.LENGTH_SHORT).show();
         //going to the Company profile page
         //Intent intent = new Intent(this, CompanyProfile.class);
         //startActivity(intent);

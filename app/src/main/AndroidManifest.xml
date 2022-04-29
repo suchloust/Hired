@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hired">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".Controller"
         android:allowBackup="true"
@@ -11,17 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hired">
         <activity
-            android:name=".CompanySurveyPage"
+            android:name=".CompanyRegistration"
             android:exported="false" />
         <activity
-            android:name=".CompanyProfile"
+            android:name=".CompanyLogin"
+            android:exported="false" />
+        <activity
+            android:name=".CompanySurveyPage"
             android:exported="false" />
         <activity
             android:name=".Explore"
             android:exported="false" />
-        <activity android:name=".VideoDisplay"
-            android:exported="false"/>
-
+        <activity
+            android:name=".VideoDisplay"
+            android:exported="false" />
         <activity
             android:name=".userSurvey"
             android:exported="false" />
@@ -44,7 +49,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

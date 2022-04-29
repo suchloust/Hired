@@ -8,6 +8,7 @@ public class Company {
 	private Location location;
 	private String experienceReq;
 	private String companyType;
+	private String url;
 	
 	public Company() {
 		name = "No name provided";
@@ -16,16 +17,20 @@ public class Company {
 		location = new Location();
 		experienceReq = "No prior experience";
 		companyType = "No occupation type provided";
+		url = "https://www.youtube.com/";
 	}
 	
-	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String compZipCode, String companyExperienceReq, String companyOccupationType) {
+	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String compZipCode, String companyExperienceReq, String companyOccupationType, String urlIn) {
 		name = nameIn;
 		email = emailIn;
 		ageMinimum = companyAgeMin;
 		location = new Location(companyStreet, compCity, compState, compZipCode);
 		experienceReq = companyExperienceReq;
 		companyType = companyOccupationType;
+		url = urlIn;
 	}
+
+
 
 	public Company(Company c){
 		name = c.getName();
@@ -34,6 +39,7 @@ public class Company {
 		location = c.getLocation();
 		experienceReq = c.getExperienceReq();
 		companyType = c.getCompanyType();
+		url = c.getUrl();
 	}
 
 	public String getName() {
@@ -83,4 +89,8 @@ public class Company {
 	public void setCompanyType(String companyType) {
 		this.companyType = companyType;
 	}
+
+	public String getUrl() { return url; }
+
+	public void setUrl(String url) { this.url = url;}
 }
