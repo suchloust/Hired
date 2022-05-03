@@ -14,7 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class CompanyRegistration extends AppCompatActivity {
     private FirebaseAuth auth;
@@ -33,19 +32,19 @@ public class CompanyRegistration extends AppCompatActivity {
 
 
         String email = companyEmail.getText().toString();
-        String pswd = companyPswd.getText().toString();
+        String password = companyPswd.getText().toString();
         String confirm = confirmPswd.getText().toString();
 
-        if (!confirmPassword(pswd, confirm)){
+        if (!confirmPassword(password, confirm)){
             Toast.makeText(CompanyRegistration.this, "Password does not match username.",Toast.LENGTH_SHORT);
         }
         else{
-            auth.createUserWithEmailAndPassword(email,pswd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                   if(task.isSuccessful()){
                       Toast.makeText(CompanyRegistration.this, "New user created for" + email + ".",Toast.LENGTH_SHORT);
-                      //take to profile page?
+                      performCompanySurvey(v);
                   }
                   else{
                       Toast.makeText(CompanyRegistration.this, "Fail to create new user. Try again.",Toast.LENGTH_SHORT);
@@ -53,7 +52,6 @@ public class CompanyRegistration extends AppCompatActivity {
                 }
             });
         }
-        performCompanySurvey(v);
     }
 
     private boolean confirmPassword(String password, String confirmation){

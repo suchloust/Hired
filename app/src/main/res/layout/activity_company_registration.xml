@@ -8,12 +8,14 @@
     tools:context=".CompanyRegistration">
 
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/signInText"
         android:layout_width="442dp"
         android:layout_height="123dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="@color/TealBlue"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="@string/welcomeString"
+        android:textColor="@color/RoyalBlue"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/companyEmail" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/signInButton"
         android:layout_width="470dp"
         android:layout_height="61dp"
         android:layout_marginTop="25dp"
@@ -45,7 +47,7 @@
         android:backgroundTint="@color/Blue"
         android:onClick="register"
         android:text="@string/registerStr"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyConfirmPassword" />
 
@@ -63,7 +65,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+        app:layout_constraintTop_toBottomOf="@+id/signInText" />
 
     <EditText
         android:id="@+id/companyConfirmPassword"
@@ -83,17 +85,18 @@
         app:layout_constraintTop_toBottomOf="@+id/companyPassword" />
 
     <TextView
-        android:id="@+id/alreadyUser"
+        android:id="@+id/newUser"
         android:layout_width="396dp"
         android:layout_height="61dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:onClick="performCompanyLogin"
         android:text="@string/alreadyUserStr"
+        android:textColor="@color/DarkBlue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/signInButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

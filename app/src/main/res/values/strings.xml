@@ -15,7 +15,6 @@
     <string name="userEmailAddressHint">Enter Email Address</string>
     <string name="userPasswordHint">Enter Password</string>
     <string name="submitButtonLabel">Get Started</string>
-    <string name="exisitingUserButtonLabel">I already have an account</string>
     <string name="filtersStr">Filters</string>
     <string name="likedStr">Liked Companies</string>
     <string name="answerFieldHintStr">Enter in your response</string>
@@ -32,7 +31,7 @@
     <string name="companyURLLabelStr">Advertisement URL: </string>
     <string name="enterCompanyURLHintStr">Enter valid YouTube URL</string>
     <string name="companyEmailLabelStr">Company Email:</string>
-    <string name="enterCompanyEmailHint">Enter in valid email address</string>
+    <string name="enterCompanyEmailHint">Enter in your email address</string>
     <string name="Question3">Minimum age requirement:</string>
     <string name="mimAgeLabelHint">Enter age</string>
     <string name="Question4">Company Location:</string>
@@ -48,8 +47,12 @@
     <string name="companyEmailHintStr">Enter an email.</string>
     <string name="companyPasswordHintStr">Enter your password.</string>
     <string name="companyConfirmHintStr">Confirm your password.</string>
-    <string name="registerStr">Register now</string>
-    <string name="alreadyUserStr">Already a User? Login here.</string>
+    <string name="registerStr">Sign up now</string>
+    <string name="alreadyUserStr">Already a user? Sign in here.</string>
+    <string name="loginStr">Sign into your company account below.</string>
+    <string name="signInNowStr">Sign in</string>
+    <string name="newUserStr">Are you new here? Sign up here.</string>
+
 
 
     <string-array name="experienceLevels">
