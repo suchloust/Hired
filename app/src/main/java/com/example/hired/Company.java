@@ -18,11 +18,10 @@ public class Company {
 		companyType = "No occupation type provided";
 	}
 	
-	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String compZipCode, String companyExperienceReq, String companyOccupationType) {
+	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String companyExperienceReq, String companyOccupationType) {
 		name = nameIn;
 		email = emailIn;
 		ageMinimum = companyAgeMin;
-		location = new Location(companyStreet, compCity, compState, compZipCode);
 		experienceReq = companyExperienceReq;
 		companyType = companyOccupationType;
 	}

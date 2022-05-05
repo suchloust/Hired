@@ -14,7 +14,7 @@
         android:layout_height="39dp"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/rubik"
-        android:text="User Information"
+        android:text="@string/userSurveyTitle"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,50 +27,40 @@
         android:layout_width="208dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:entries="@array/userInterestDropdownChoices"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toEndOf="@+id/q2Text"
-        app:layout_constraintTop_toBottomOf="@+id/userLocationInput" />
-
-    <Spinner
-        android:id="@+id/skill2spinner"
-        android:layout_width="213dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="35dp"
-        android:entries="@array/userSkillsInto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/q2Text3"
-        app:layout_constraintTop_toBottomOf="@+id/skill1spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/userLocationInput"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
         android:id="@+id/skill1spinner"
         android:layout_width="212dp"
         android:layout_height="48dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="35dp"
-        android:entries="@array/userSkillsInteraction"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/q2Text2"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:entries="@array/userExperienceDropdownChoices"
+        app:layout_constraintStart_toEndOf="@+id/q3Text"
         app:layout_constraintTop_toBottomOf="@+id/interestSpinner" />
 
     <EditText
         android:id="@+id/userLocationInput"
         android:layout_width="136dp"
         android:layout_height="52dp"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="299dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/rubik"
-        android:hint="Enter Town:"
+        android:hint="@string/townHint"
         android:inputType="textPostalAddress"
         android:minHeight="48dp"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/userStreetAddressInput"
+        app:layout_constraintTop_toBottomOf="@+id/q1Text"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/qAgeText"
@@ -80,7 +70,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="26dp"
         android:fontFamily="@font/rubik"
-        android:text="Age:"
+        android:text="@string/ageText"
         android:textAlignment="textStart"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/userAgeInput"
@@ -94,7 +84,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="116dp"
         android:fontFamily="@font/rubik"
-        android:text="Name:"
+        android:text="@string/nameText"
         android:textAlignment="textStart"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,12 +98,13 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:fontFamily="@font/rubik"
-        android:hint="Enter Age:"
+        android:hint="@string/ageHint"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/qAgeText"
-        app:layout_constraintTop_toBottomOf="@+id/userNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/userNameInput"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/saveButton"
@@ -121,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="15dp"
-        android:text="Done"
+        android:text="@string/userSurveySubButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -129,98 +120,52 @@
         android:id="@+id/q2Text"
         android:layout_width="323dp"
         android:layout_height="55dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="302dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/rubik"
-        android:text="What types of jobs are you interested in?"
+        android:text="@string/interestQuestion"
         android:textAlignment="textStart"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userStreetAddressInput" />
 
     <TextView
         android:id="@+id/q3Text"
-        android:layout_width="324dp"
-        android:layout_height="55dp"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/rubik"
-        android:text="How experienced are you?"
+        android:text="@string/experienceQuestion"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text4" />
-
-    <TextView
-        android:id="@+id/q2Text3"
-        android:layout_width="328dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="9dp"
-        android:fontFamily="@font/rubik"
-        android:text="How do you see yourself working?"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/skill2spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/q2Text" />
 
     <TextView
         android:id="@+id/q2Text2"
-        android:layout_width="325dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="13dp"
+        android:layout_width="326dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/rubik"
-        android:text="How outgoing are you?"
+        android:text="@string/certQuestion"
         android:textAlignment="textStart"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/skill1spinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text" />
-
-    <TextView
-        android:id="@+id/q2Text4"
-        android:layout_width="325dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="11dp"
-        android:fontFamily="@font/rubik"
-        android:text="Do you consider yourself more..."
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/skill3spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q2Text" />
-
-    <Spinner
-        android:id="@+id/skill3spinner"
-        android:layout_width="214dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="35dp"
-        android:entries="@array/userSkillsFocus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/q2Text4"
-        app:layout_constraintTop_toBottomOf="@+id/skill2spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/q3Text" />
 
     <TextView
         android:id="@+id/q1Text"
         android:layout_width="116dp"
         android:layout_height="34dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/rubik"
-        android:text="Address:"
+        android:text="@string/addressQuestion"
         android:textAlignment="textStart"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAgeInput" />
 
     <EditText
         android:id="@+id/userNameInput"
@@ -230,11 +175,12 @@
         android:layout_marginTop="29dp"
         android:ems="10"
         android:fontFamily="@font/rubik"
-        android:hint="Enter Name:"
+        android:hint="@string/userNameHint"
         android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/qNameText"
-        app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/userSurveyLabel"
+        android:autofillHints="" />
 
     <ImageView
         android:id="@+id/miniLogo"
@@ -243,43 +189,86 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minilogo" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="213dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="15dp"
-        android:entries="@array/userExperienceDropdownChoices"
-        app:layout_constraintStart_toEndOf="@+id/q3Text"
-        app:layout_constraintTop_toBottomOf="@+id/skill3spinner" />
+        app:srcCompat="@drawable/minilogo"
+        android:contentDescription="@string/todo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/userStreetAddressInput"
         android:layout_width="132dp"
         android:layout_height="52dp"
-        android:layout_marginTop="299dp"
-        android:layout_marginEnd="452dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/rubik"
-        android:hint="Enter Street:"
+        android:hint="@string/streetAddressHint"
         android:inputType="textPersonName"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/userLocationInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/q1Text"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="142dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="301dp"
-        android:layout_marginEnd="144dp"
+        android:id="@+id/userStateInput"
+        android:layout_width="136dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
         android:ems="10"
-        android:hint="Enter State"
+        android:hint="@string/stateInputHint"
         android:inputType="textPersonName"
         android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/userLocationInput"
+        app:layout_constraintTop_toBottomOf="@+id/q1Text"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/userZipInput"
+        android:layout_width="131dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/rubik"
+        android:freezesText="true"
+        android:hint="@string/zipCodeHint"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/userStateInput"
+        app:layout_constraintTop_toBottomOf="@+id/q1Text"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/cert1Input"
+        android:layout_width="464dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/certificationHint"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/q2Text2"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/cert2Input"
+        android:layout_width="464dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/certificationHint"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cert1Input"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
