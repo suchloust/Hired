@@ -40,6 +40,16 @@
     <string name="enterCompanyZipCodeHint">Enter zip code</string>
     <string name="Question7">What is the experience requirements you have for employees?</string>
     <string name="Question8">What field of occupation does your company fall in?</string>
+    <string name="loc_sentient">Location</string>
+    <string name="industry_sentient">Industry</string>
+    <string name="reqs_sentient">Age and Experience\nRequirements</string>
+    <string name="youtubePlaylist">YouTube Playlist URL</string>
+    <string name="company_companyprofile">Company Name</string>
+    <string name="location_companyprofile">Location</string>
+    <string name="industry_companyprofile">Industry</string>
+    <string name="requirements_companyprofile">Requirements</string>
+    <string name="youtube_companyprofile">URL</string>
+    <string name="edit_compprof">Edit</string>
 
     <string-array name="experienceLevels">
         <item>No prior experience.</item>

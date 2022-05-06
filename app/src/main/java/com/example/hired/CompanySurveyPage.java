@@ -1,16 +1,13 @@
 package com.example.hired;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -82,13 +79,17 @@ public class CompanySurveyPage extends AppCompatActivity {
 
             Log.d("CompanySurveyPage", "Exited the method");
         //going to the Company profile page
-        //Intent intent = new Intent(this, CompanyProfile.class);
-        //startActivity(intent);
+        goProfile(v);
     }
 
 
-    public void goHome(View v){
+    private void goHome(View v){
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void goProfile(View v){
+        Intent intent = new Intent(this, CompanyProfile.class);
         startActivity(intent);
     }
 }
