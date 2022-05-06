@@ -52,6 +52,16 @@
     <string name="loginStr">Sign into your company account below.</string>
     <string name="signInNowStr">Sign in</string>
     <string name="newUserStr">Are you new here? Sign up here.</string>
+    <string name="loc_sentient">Location</string>
+    <string name="industry_sentient">Industry</string>
+    <string name="reqs_sentient">Age and Experience\nRequirements</string>
+    <string name="youtubePlaylist">YouTube Playlist URL</string>
+    <string name="company_companyprofile">Company Name</string>
+    <string name="location_companyprofile">Location</string>
+    <string name="industry_companyprofile">Industry</string>
+    <string name="requirements_companyprofile">Requirements</string>
+    <string name="youtube_companyprofile">URL</string>
+    <string name="edit_compprof">Edit</string>
 
     <string-array name="experienceLevels">
         <item>No prior experience.</item>
