@@ -25,10 +25,10 @@ public class CompanyLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_login);
+        auth= FirebaseAuth.getInstance();
     }
 
     public void signIn(View v){
-        auth= FirebaseAuth.getInstance();
         EditText companyEmail = findViewById(R.id.companyEmail);
         EditText companyPassword = findViewById(R.id.companyPassword);
 

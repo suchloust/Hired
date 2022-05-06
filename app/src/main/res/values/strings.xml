@@ -53,8 +53,6 @@
     <string name="signInNowStr">Sign in</string>
     <string name="newUserStr">Are you new here? Sign up here.</string>
 
-
-
     <string-array name="experienceLevels">
         <item>No prior experience.</item>
         <item>Have held a non-paying/internship job</item>

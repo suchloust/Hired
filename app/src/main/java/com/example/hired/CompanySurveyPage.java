@@ -12,10 +12,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CompanySurveyPage extends AppCompatActivity {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +97,12 @@ public class CompanySurveyPage extends AppCompatActivity {
 
 
     public void goHome(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void signOut(View v){
+        auth.signOut();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
