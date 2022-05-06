@@ -1,240 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CompanySurveyPage">
+    android:contentDescription="@string/answerFieldHintStr">
 
-    <ImageButton
-        android:id="@+id/backtoHomePage"
-        android:layout_width="65dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:onClick="goHome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_action_name"
-        tools:ignore="SpeakableTextPresentCheck" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstraintLayoutCompSurv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CompanySurveyPage">
 
-    <TextView
-        android:id="@+id/companyPageLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="73dp"
-        android:text="@string/companyPageLabelStr"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/saveAndToProfileButton"
-        app:layout_constraintStart_toEndOf="@+id/backtoHomePage"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/saveAndToProfileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:onClick="performSave"
-        android:text="@string/submitAnswerStr"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/companyNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/companyNameLabelStr"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backtoHomePage" />
-
-    <EditText
-        android:id="@+id/companyNameField"
-        android:layout_width="309dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:ems="10"
-        android:hint="@string/enterCompanyNameHintStr"
-        android:inputType="textPersonName"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/companyNameLabel"
-        app:layout_constraintTop_toBottomOf="@+id/companyPageLabel" />
-
-    <TextView
-        android:id="@+id/companyEmailLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/companyEmailLabelStr"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameLabel" />
-
-    <EditText
-        android:id="@+id/companyEmailField"
-        android:layout_width="306dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="@string/enterCompanyEmailHint"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/companyEmailLabel"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameField" />
-
-    <TextView
-        android:id="@+id/ageMinLabel"
-        android:layout_width="575dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/Question3"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyEmailField" />
-
-    <EditText
-        android:id="@+id/ageMinimum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:hint="@string/minimumAgeLabelStr"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageMinLabel"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/companyLocationLabel"
-        android:layout_width="579dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/Question4"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageMinimum" />
-
-    <LinearLayout
-        android:id="@+id/location"
-        android:layout_width="558dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="15dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/companyLocationLabel">
-
-        <EditText
-            android:id="@+id/companyStreetAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/enterCompanyAddressHint"
-            android:inputType="textPostalAddress"
-            android:minHeight="48dp"
+        <ImageButton
+            android:id="@+id/logOut"
+            android:layout_width="78dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/TealBlue"
+            android:onClick="signOut"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_action_name"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/companyCity"
+        <TextView
+            android:id="@+id/companyPageLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/enterCompanyCityHint"
-            android:inputType="textPostalAddress"
-            android:minHeight="48dp" />
+            android:layout_marginTop="15dp"
+            android:text="@string/companyPageLabelStr"
+            android:textColor="@color/RoyalBlue"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/companyState"
+        <Button
+            android:id="@+id/saveAndToProfileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/enterCompanyStateHint"
-            android:inputType="textPostalAddress"
-            android:minHeight="48dp" />
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/TealBlue"
+            android:onClick="performSave"
+            android:text="@string/submitAnswerStr"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/zipCodeField"
+        <TextView
+            android:id="@+id/companyNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/companyNameLabelStr"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logOut" />
+
+        <TextView
+            android:id="@+id/companyURLLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/companyURLLabelStr"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <EditText
+            android:id="@+id/companyNameField"
+            android:layout_width="309dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
             android:ems="10"
-            android:hint="@string/enterCompanyZipCodeHint"
-            android:inputType="number"
-            android:minHeight="48dp" />
+            android:hint="@string/enterCompanyNameHintStr"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/companyNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/companyPageLabel" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/companyEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/companyEmailLabelStr"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyNameLabel" />
 
-    <TextView
-        android:id="@+id/experienceReqLabel"
-        android:layout_width="575dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="15dp"
-        android:layout_weight="1"
-        android:text="@string/Question7"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        <EditText
+            android:id="@+id/companyEmailField"
+            android:layout_width="306dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/enterCompanyEmailHint"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toEndOf="@+id/companyEmailLabel"
+            app:layout_constraintTop_toBottomOf="@+id/companyNameField" />
 
-    <Spinner
-        android:id="@+id/experienceLevels"
-        android:layout_width="567dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:entries="@array/experienceLevels"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experienceReqLabel"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/companyURLField"
+            android:layout_width="306dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:hint="@string/enterCompanyEmailHint"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/companyURLLabel"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
 
-    <TextView
-        android:id="@+id/occupationTypeLabel"
-        android:layout_width="575dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_weight="1"
-        android:text="@string/Question8"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experienceLevels" />
+        <TextView
+            android:id="@+id/ageMinLabel"
+            android:layout_width="376dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/Question3"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyEmailField" />
 
-    <Spinner
-        android:id="@+id/occupationTypes"
-        android:layout_width="570dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:entries="@array/occupationTypes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/occupationTypeLabel"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        <EditText
+            android:id="@+id/ageMinimum"
+            android:layout_width="162dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:ems="10"
+            android:hint="@string/mimAgeLabelHint"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ageMinLabel"
+            app:layout_constraintTop_toBottomOf="@+id/companyEmailField"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/companyLocationLabel"
+            android:layout_width="579dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/Question4"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageMinimum" />
+
+        <LinearLayout
+            android:id="@+id/location"
+            android:layout_width="557dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyLocationLabel">
+
+            <EditText
+                android:id="@+id/companyStreetAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterCompanyAddressHint"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/companyCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterCompanyCityHint"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/companyState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterCompanyStateHint"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <EditText
+                android:id="@+id/zipCodeField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterCompanyZipCodeHint"
+                android:inputType="number"
+                android:minHeight="48dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/experienceReqLabel"
+            android:layout_width="575dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="84dp"
+            android:layout_weight="1"
+            android:text="@string/Question7"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location" />
+
+        <Spinner
+            android:id="@+id/occupationTypes"
+            android:layout_width="570dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/occupationTypes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occupationTypeLabel"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/occupationTypeLabel"
+            android:layout_width="575dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="@string/Question8"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/experienceLevels" />
+
+        <TextView
+            android:id="@+id/certificationLabel"
+            android:layout_width="575dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:text="@string/Question9"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/occupationTypes" />
+
+        <Spinner
+            android:id="@+id/experienceLevels"
+            android:layout_width="567dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="15dp"
+            android:entries="@array/experienceLevels"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/experienceReqLabel"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/certReqField"
+            android:layout_width="538dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
+            android:ems="10"
+            android:hint="@string/companyCertHint"
+            android:inputType="textPersonName"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/certificationLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>

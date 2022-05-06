@@ -35,7 +35,8 @@ public class VideoDisplay extends Activity
         urls = new ArrayList<String>();
         //eventually fetch urls from company survey
         //hard coding from poorvi's youtube channel to test
-        urls.add("https://youtube.com/watch?v=R1HW6Comeno");
+        urls.add("https://www.youtube.com/watch?v=R1HW6Comeno&list=PL-eNI-SnpgHEeGwbIzwmQLjJgtDgYl8mm");
+        urls.add("https://www.youtube.com/watch?v=E6IUMKMpdRo&list=PLtlV6iOFdL-zGO5oLkMbgYhDkukGd-teU");
         urls.add("https://youtube.com/watch?v=oARjNQq8KAQ");
         urls.add("https://youtube.com/watch?v=3IYe33_31i8&t=7s");
         urls.add("https://youtube.com/watch?v=_P3EBU0-j54&t=379s");
