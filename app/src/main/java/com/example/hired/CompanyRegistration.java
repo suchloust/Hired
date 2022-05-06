@@ -50,6 +50,7 @@ public class CompanyRegistration extends AppCompatActivity {
                   if(task.isSuccessful()){
                       Toast.makeText(CompanyRegistration.this, "New user created for" + email + ".",Toast.LENGTH_SHORT);
                       Log.d("CompanySurveyPage", "Successful authentication.");
+                      performCompanySurvey(v);
                   }
                   else{
                       Log.d("CompanySurveyPage", "Failed to create new user. Try again.");
@@ -67,7 +68,7 @@ public class CompanyRegistration extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();
         if (user!=null){
             //!!Important!! Right now, I have this going to the survey page, since I don't have Diego's Company Profile Page
-            //Make sure to link this to the Company Profile page after we merged!!
+            //Make sure to link this to the Company Profile page after we merge!!
             Intent intent = new Intent(this, CompanySurveyPage.class);
             startActivity(intent);
             this.finish();

@@ -24,7 +24,7 @@ public class CompanySurveyPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_survey_page);
-
+        auth = FirebaseAuth.getInstance();
     }
 
     //storing the Company input in the Firebase for every field
