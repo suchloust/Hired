@@ -37,7 +37,6 @@ public class CompanyRegistration extends AppCompatActivity {
         String confirm = confirmPassword.getText().toString();
         Log.d("CompanySurveyPage", email + " " + password + " " + confirm);
 
-
         if (!confirmPassword(password, confirm)){
             Toast.makeText(CompanyRegistration.this, "Password does not match username.",Toast.LENGTH_SHORT);
             Log.d("CompanySurveyPage", "not confirmed" + " " + password + " " + confirm);
