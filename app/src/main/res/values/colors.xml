@@ -13,4 +13,10 @@
     <color name="Opal">#C5D8D1</color>
     <color name="Violet">#7E6B8F</color>
 
+    <color name="Blue">#034078</color>
+    <color name="DarkBlue">#001F54</color>
+    <color name="BlackBlue">#0A1128</color>
+    <color name="TealBlue">#1282A2</color>
+    <color name="White">#FEFCFB</color>
+
 </resources>

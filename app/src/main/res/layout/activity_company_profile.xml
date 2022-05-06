@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompanyProfile">
+
+    <TextView
+        android:id="@+id/companyNameProfile"
+        android:layout_width="408dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="@string/company_companyprofile"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/locationCompanyProfile"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="58dp"
+        android:gravity="center"
+        android:fontFamily="@font/rubik"
+        android:text="@string/location_companyprofile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/industryCompanyProfile"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="287dp"
+        android:layout_marginEnd="58dp"
+        android:gravity="center"
+        android:text="@string/industry_companyprofile"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/requirementsCompanyProfile"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="58dp"
+        android:gravity="center"
+        android:text="@string/requirements_companyprofile"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/youtube_url_comp"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:gravity="center"
+        android:text="@string/youtube_companyprofile"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requirementsCompanyProfile" />
+
+    <Button
+        android:id="@+id/comp_survey_button"
+        android:layout_width="176dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginBottom="220dp"
+        android:backgroundTint="@color/Blue"
+        android:fontFamily="@font/rubik"
+        android:text="@string/edit_compprof"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtube_prof"
+        app:layout_constraintVertical_bias="0.796" />
+
+    <TextView
+        android:id="@+id/location_prof"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:text="@string/loc_sentient"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toStartOf="@+id/locationCompanyProfile"
+        app:layout_constraintTop_toBottomOf="@+id/companyNameProfile" />
+
+    <TextView
+        android:id="@+id/industry_prof"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:text="@string/industry_sentient"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toStartOf="@+id/industryCompanyProfile"
+        app:layout_constraintTop_toBottomOf="@+id/location_prof" />
+
+    <TextView
+        android:id="@+id/reqs_prof"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:text="@string/reqs_sentient"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toStartOf="@+id/requirementsCompanyProfile"
+        app:layout_constraintTop_toBottomOf="@+id/industry_prof" />
+
+    <TextView
+        android:id="@+id/youtube_prof"
+        android:layout_width="224dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/youtubePlaylist"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintTop_toBottomOf="@+id/reqs_prof" />
+</androidx.constraintlayout.widget.ConstraintLayout>

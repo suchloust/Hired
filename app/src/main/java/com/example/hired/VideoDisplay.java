@@ -9,6 +9,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -77,6 +78,7 @@ public class VideoDisplay extends Activity
         resumeBrowser();
         webview.loadUrl(urls.get(url));
 
+
     }
 
     /**
@@ -87,10 +89,14 @@ public class VideoDisplay extends Activity
     {
         resumeBrowser();
         url++;
+
         if (url<url_list.size()-1)
-        mWebView.loadUrl(url_list.get(url));
-        //eventually add a message saying "you've reached the end"
-        //or don't show the next button on the last video
+            mWebView.loadUrl(url_list.get(url));
+
+        else {
+            Toast.makeText(getApplicationContext(),"you have reached the end bestie ",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
@@ -101,10 +107,14 @@ public class VideoDisplay extends Activity
     {
         resumeBrowser();
         url--;
+
         if (url>-1)
         mWebView.loadUrl(url_list.get(url));
-        //eventually add a message saying "this is the first video"
-        //or maybe don't show the previous button on the first video
+
+        else{
+            Toast.makeText(getApplicationContext(),"hey bestie this is the first vid ",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
 
