@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,11 +22,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button userSubButton;
+    private FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        auth = FirebaseAuth.getInstance();
 
         userSubButton = (Button) findViewById(R.id.userSubmitButton);
         userSubButton.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void performCompanyLogin(View v){
         Intent intent = new Intent(this, CompanyLogin.class);
+        startActivity(intent);
+    }
+
+    public void signOut(View v){
+        auth.signOut();
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

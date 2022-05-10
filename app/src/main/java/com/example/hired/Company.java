@@ -9,6 +9,7 @@ public class Company {
 	private String experienceReq;
 	private String companyType;
 	private String url;
+	private String certification;
 	
 	public Company() {
 		name = "No name provided";
@@ -18,9 +19,10 @@ public class Company {
 		experienceReq = "No prior experience";
 		companyType = "No occupation type provided";
 		url = "https://www.youtube.com/";
+		certification = "No certifications required";
 	}
 	
-	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String compZipCode, String companyExperienceReq, String companyOccupationType, String urlIn) {
+	public Company(String nameIn, String emailIn,  String companyAgeMin, String companyStreet,String compCity,String compState, String compZipCode, String companyExperienceReq, String companyOccupationType, String urlIn, String certification) {
 		name = nameIn;
 		email = emailIn;
 		ageMinimum = companyAgeMin;
@@ -28,9 +30,8 @@ public class Company {
 		experienceReq = companyExperienceReq;
 		companyType = companyOccupationType;
 		url = urlIn;
+		this.certification = certification;
 	}
-
-
 
 	public Company(Company c){
 		name = c.getName();
@@ -93,4 +94,12 @@ public class Company {
 	public String getUrl() { return url; }
 
 	public void setUrl(String url) { this.url = url;}
+
+	public String getCertification() {
+		return certification;
+	}
+
+	public void setCertification(String certification) {
+		this.certification = certification;
+	}
 }

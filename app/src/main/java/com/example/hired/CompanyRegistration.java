@@ -66,9 +66,7 @@ public class CompanyRegistration extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if (user!=null){
-            //!!Important!! Right now, I have this going to the survey page, since I don't have Diego's Company Profile Page
-            //Make sure to link this to the Company Profile page after we merge!!
-            Intent intent = new Intent(this, CompanySurveyPage.class);
+            Intent intent = new Intent(this, CompanyProfile.class);
             startActivity(intent);
             this.finish();
         }

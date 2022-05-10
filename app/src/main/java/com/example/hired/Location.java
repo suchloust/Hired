@@ -12,6 +12,23 @@ public class Location {
         state = "No state provided";
         zipCode = "No zip code provided";
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
     public Location(String street, String cityIn, String stateIn, String zipCodeIn){
         streetAddress = street;
         city = cityIn;
@@ -33,5 +50,9 @@ public class Location {
 
     public String getZipCode(){
         return zipCode;
+    }
+
+    public String toString(){
+        return streetAddress + ", " + city + ", " + state;
     }
 }
