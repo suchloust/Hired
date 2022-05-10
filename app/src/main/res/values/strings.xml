@@ -45,8 +45,8 @@
     <string name="companyCertHint">Enter required certifications</string>
     <string name="welcomeString">"Start your search below. "</string>
     <string name="companyEmailHintStr">Enter an email.</string>
-    <string name="companyPasswordHintStr">Enter your password.</string>
-    <string name="companyConfirmHintStr">Confirm your password.</string>
+    <string name="companyPasswordHintStr">Enter your password (min. 6 characters)</string>
+    <string name="companyConfirmHintStr">Confirm your password (min. 6 characters)</string>
     <string name="registerStr">Sign up now</string>
     <string name="alreadyUserStr">Already a user? Sign in here.</string>
     <string name="loginStr">Sign into your company account below.</string>
@@ -65,6 +65,8 @@
     <string name="experienceReqLabel">Required Experience:</string>
     <string name="certificationsLabel">Required Certification:</string>
     <string name="youTubeLabel">Your Advertisements:</string>
+    <string name="urlStr">Enter in your YouTube URL</string>
+
 
 
 
