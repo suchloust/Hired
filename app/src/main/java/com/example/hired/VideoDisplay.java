@@ -95,7 +95,7 @@ public class VideoDisplay extends Activity
             mWebView.loadUrl(url_list.get(url));
 
         else {
-            Toast.makeText(getApplicationContext(),"you have reached the end bestie ",
+            Toast.makeText(getApplicationContext(),"This is the last video.",
                     Toast.LENGTH_SHORT).show();
         }
     }
@@ -113,7 +113,7 @@ public class VideoDisplay extends Activity
         mWebView.loadUrl(url_list.get(url));
 
         else{
-            Toast.makeText(getApplicationContext(),"hey bestie this is the first vid ",
+            Toast.makeText(getApplicationContext(),"This is the first video.",
                     Toast.LENGTH_SHORT).show();
         }
     }
