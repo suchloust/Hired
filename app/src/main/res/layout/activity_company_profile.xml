@@ -8,124 +8,201 @@
     tools:context=".CompanyProfile">
 
     <TextView
-        android:id="@+id/companyNameProfile"
-        android:layout_width="408dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="45dp"
-        android:gravity="center"
-        android:text="@string/company_companyprofile"
+        android:id="@+id/companyNameHeader"
+        android:layout_width="400dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/rubik"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/locationCompanyProfile"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="58dp"
-        android:gravity="center"
-        android:fontFamily="@font/rubik"
-        android:text="@string/location_companyprofile"
+    <ImageButton
+        android:id="@+id/logOut3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/company_button"
+        android:backgroundTint="@color/LightBlue"
+        android:onClick="signOut"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_action_name"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/industryCompanyProfile"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="287dp"
-        android:layout_marginEnd="58dp"
-        android:gravity="center"
-        android:text="@string/industry_companyprofile"
-        android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/requirementsCompanyProfile"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="398dp"
-        android:layout_marginEnd="58dp"
-        android:gravity="center"
-        android:text="@string/requirements_companyprofile"
-        android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/youtube_url_comp"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="56dp"
-        android:gravity="center"
-        android:text="@string/youtube_companyprofile"
-        android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requirementsCompanyProfile" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/comp_survey_button"
-        android:layout_width="176dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginBottom="220dp"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:background="@drawable/company_button"
         android:backgroundTint="@color/Blue"
         android:fontFamily="@font/rubik"
+        android:gravity="center"
         android:text="@string/edit_compprof"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyIndustryHeader" />
+
+    <TextView
+        android:id="@+id/companyLocationHeader"
+        android:layout_width="500dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/rubik"
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_prof"
-        app:layout_constraintVertical_bias="0.796" />
+        app:layout_constraintTop_toBottomOf="@+id/companyEmailHeader" />
 
     <TextView
-        android:id="@+id/location_prof"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        android:text="@string/loc_sentient"
+        android:id="@+id/companyEmailHeader"
+        android:layout_width="500dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toStartOf="@+id/locationCompanyProfile"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameProfile" />
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyNameHeader" />
 
     <TextView
-        android:id="@+id/industry_prof"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        android:text="@string/industry_sentient"
+        android:id="@+id/companyIndustryHeader"
+        android:layout_width="500dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toStartOf="@+id/industryCompanyProfile"
-        app:layout_constraintTop_toBottomOf="@+id/location_prof" />
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyLocationHeader" />
 
     <TextView
         android:id="@+id/reqs_prof"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:gravity="center"
-        android:text="@string/reqs_sentient"
+        android:layout_width="303dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/rubik"
-        app:layout_constraintEnd_toStartOf="@+id/requirementsCompanyProfile"
-        app:layout_constraintTop_toBottomOf="@+id/industry_prof" />
+        android:gravity="clip_horizontal"
+        android:text="@string/reqs_sentient"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyIndustryHeader" />
 
     <TextView
-        android:id="@+id/youtube_prof"
-        android:layout_width="224dp"
-        android:layout_height="93dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/youtubePlaylist"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/yourVideosLabel"
+        android:layout_width="303dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/rubik"
+        android:gravity="clip_horizontal"
+        android:text="@string/youTubeLabel"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certReqLabel" />
+
+    <Button
+        android:id="@+id/ageReqLabel"
+        android:layout_width="280dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/minimumAgeLabelStr"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reqs_prof"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/certReqLabel"
+        android:layout_width="280dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/certificationsLabel"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/experienceReqLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/experienceReqLabel"
+        android:layout_width="280dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/experienceReqLabel"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageReqLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/companyAge"
+        android:layout_width="255dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/rubik"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reqs_prof" />
+
+    <TextView
+        android:id="@+id/companyExp"
+        android:layout_width="255dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/rubik"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyAge" />
+
+    <TextView
+        android:id="@+id/companyCert"
+        android:layout_width="255dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/rubik"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyExp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

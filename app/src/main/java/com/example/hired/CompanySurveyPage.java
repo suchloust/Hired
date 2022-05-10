@@ -84,6 +84,10 @@ public class CompanySurveyPage extends AppCompatActivity {
             company.setCompanyType(occupationType);
         Log.d("CompanySurveyPage", occupationType);
 
+        EditText companyCertRaw = findViewById(R.id.certReqField);
+        String companyCert = companyCertRaw.getText().toString();
+        company.setCertification(companyCert);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference();
             DatabaseReference child = myRef.child(userID);
@@ -93,8 +97,8 @@ public class CompanySurveyPage extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),"Changes saved",Toast.LENGTH_SHORT).show();
         //going to the Company profile page
-        //Intent intent = new Intent(this, CompanyProfile.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, CompanyProfile.class);
+        startActivity(intent);
 
         //read this for next steps...in the profile class, we need an event listener that is listening for changes to the firebase
         //merge with Diego and implement this

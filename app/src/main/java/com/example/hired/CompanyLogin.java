@@ -45,7 +45,7 @@ public class CompanyLogin extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         Toast.makeText(CompanyLogin.this, "Successful login for " + email + ".",Toast.LENGTH_SHORT);
-                        //go to a page?
+                        performCompanyProfile(v);
                     }
                     else{
                         Toast.makeText(CompanyLogin.this, "Failed to login. Try again.",Toast.LENGTH_SHORT);
@@ -60,9 +60,7 @@ public class CompanyLogin extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = auth.getCurrentUser();
         if (user!=null){
-            //!!Important!! Right now, I have this going to the survey page, since I don't have Diego's Company Profile Page
-            //Make sure to link this to the Company Profile page after we merged!!
-            Intent intent = new Intent(this, CompanySurveyPage.class);
+            Intent intent = new Intent(this, CompanyProfile.class);
             startActivity(intent);
             this.finish();
         }
@@ -70,6 +68,11 @@ public class CompanyLogin extends AppCompatActivity {
 
     public void performCompanyRegistration(View v){
         Intent intent = new Intent(this, CompanyRegistration.class);
+        startActivity(intent);
+    }
+
+    private void performCompanyProfile(View v){
+        Intent intent = new Intent(this, CompanyProfile.class);
         startActivity(intent);
     }
 }
