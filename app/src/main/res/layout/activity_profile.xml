@@ -7,24 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+    <TextView
+        android:id="@+id/filter4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:text="from survey"
+        app:layout_constraintStart_toEndOf="@+id/filter3"
+        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
+
     <ImageView
         android:id="@+id/logoHomeButton"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
+        android:layout_width="93dp"
+        android:layout_height="85dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/minilogo" />
 
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/rubik"
         android:text="name"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,62 +57,51 @@
     <ImageView
         android:id="@+id/profilePic"
         android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="496dp"
+        android:adjustViewBounds="true"
         android:background="@drawable/bg_circle"
+        android:cropToPadding="false"
         android:outlineProvider="background"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/profilepic" />
+        app:srcCompat="@drawable/newprofilecase" />
 
     <TextView
         android:id="@+id/filter3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="from survey"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/filter2"
         app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
 
     <TextView
         android:id="@+id/filter2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
         android:text="from survey"
-        app:layout_constraintEnd_toStartOf="@+id/filter3"
-        app:layout_constraintStart_toEndOf="@+id/filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.345"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
 
     <TextView
         android:id="@+id/filter1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="from survey"
-        app:layout_constraintEnd_toStartOf="@+id/filter"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
-
-    <TextView
-        android:id="@+id/filter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:text="from survey"
         app:layout_constraintEnd_toStartOf="@+id/filter2"
-        app:layout_constraintStart_toEndOf="@+id/filter1"
         app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
 
     <TextView
@@ -110,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/rubik"
         android:text="@string/likedStr"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +120,8 @@
         android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/rubik"
         android:text="location from survey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,6 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/rubik"
         android:text="age from survey"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,6 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple_700"
         android:text="Filters"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
@@ -153,14 +157,101 @@
         android:id="@+id/videos_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="592dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/greenBlue"
         android:text="Start finding a job!"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/matchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="@color/green2"
+        android:text="Match me with jobs!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likedCompaniesLabel" />
+
+    <TextView
+        android:id="@+id/jobMatch1"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 1"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchButton" />
+
+    <TextView
+        android:id="@+id/jobMatch2"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 2"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch1" />
+
+    <TextView
+        android:id="@+id/jobMatch3"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 3"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch2" />
+
+    <TextView
+        android:id="@+id/jobMatch4"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 4"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch3" />
+
+    <TextView
+        android:id="@+id/jobMatch5"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 5"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch4" /><![CDATA[
+
+
+
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

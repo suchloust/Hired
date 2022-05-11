@@ -11,6 +11,15 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -19,11 +28,13 @@ public class VideoDisplay extends Activity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
-    Button userBut;
-    Button previous;
-    Button advance;
-    int url;
-    ArrayList<String> urls;
+    private Button userBut;
+    private Button previous;
+    private Button advance;
+    private int url;
+    private ArrayList<String> urls;
+    private DatabaseReference ref;
+    private FirebaseAuth auth;
 
     /**
      * Initializes video class
@@ -33,13 +44,26 @@ public class VideoDisplay extends Activity
     {
         url = 0;
         urls = new ArrayList<String>();
-        //eventually fetch urls from company survey
-        //hard coding from poorvi's youtube channel to test
-        urls.add("https://www.youtube.com/watch?v=R1HW6Comeno&list=PL-eNI-SnpgHEeGwbIzwmQLjJgtDgYl8mm");
-        urls.add("https://www.youtube.com/watch?v=E6IUMKMpdRo&list=PLtlV6iOFdL-zGO5oLkMbgYhDkukGd-teU");
-        urls.add("https://youtube.com/watch?v=oARjNQq8KAQ");
-        urls.add("https://youtube.com/watch?v=3IYe33_31i8&t=7s");
-        urls.add("https://youtube.com/watch?v=_P3EBU0-j54&t=379s");
+        auth=FirebaseAuth.getInstance();
+        ref= FirebaseDatabase.getInstance().getReference();
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snappingTurtle : snapshot.getChildren()){
+                    Company company = snappingTurtle.getValue(Company.class);
+                    urls.add(company.getUrl());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                urls.add("www.youtube.com");
+            }
+        });
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
@@ -79,7 +103,6 @@ public class VideoDisplay extends Activity
         resumeBrowser();
         webview.loadUrl(urls.get(url));
 
-
     }
 
     /**
@@ -90,14 +113,10 @@ public class VideoDisplay extends Activity
     {
         resumeBrowser();
         url++;
-
         if (url<url_list.size()-1)
-            mWebView.loadUrl(url_list.get(url));
-
-        else {
-            Toast.makeText(getApplicationContext(),"This is the last video.",
-                    Toast.LENGTH_SHORT).show();
-        }
+        mWebView.loadUrl(url_list.get(url));
+        //eventually add a message saying "you've reached the end"
+        //or don't show the next button on the last video
     }
 
     /**
@@ -113,7 +132,7 @@ public class VideoDisplay extends Activity
         mWebView.loadUrl(url_list.get(url));
 
         else{
-            Toast.makeText(getApplicationContext(),"This is the first video.",
+            Toast.makeText(getApplicationContext(),"hey bestie this is the first vid ",
                     Toast.LENGTH_SHORT).show();
         }
     }

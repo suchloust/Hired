@@ -62,6 +62,22 @@
     <string name="requirements_companyprofile">Requirements</string>
     <string name="youtube_companyprofile">URL</string>
     <string name="edit_compprof">Edit</string>
+    <string name="certificationHint">Enter certification title:</string>
+    <string name="userNameHint">Enter Name:</string>
+    <string name="userSurveyTitle">User Information</string>
+    <string name="streetAddressHint">Enter Street:</string>
+    <string name="interestQuestion">What types of jobs are you interested in?</string>
+    <string name="certQuestion">List any certifications you have:</string>
+    <string name="zipCodeHint">ZIP Code:</string>
+    <string name="experienceQuestion">How experienced are you?</string>
+    <string name="addressQuestion">Address:</string>
+    <string name="townHint">Enter Town:</string>
+    <string name="todo" />
+    <string name="stateInputHint">State:</string>
+    <string name="ageHint">Enter Age:</string>
+    <string name="userSurveySubButton">Done</string>
+    <string name="nameText">Name:</string>
+    <string name="ageText">Age:</string>
     <string name="experienceReqLabel">Required Experience:</string>
     <string name="certificationsLabel">Required Certification:</string>
     <string name="youTubeLabel">Your Advertisements:</string>
@@ -115,5 +131,4 @@
         <item>Analytical</item>
         <item>Problem-Solver</item>
     </string-array>
-
 </resources>
