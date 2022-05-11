@@ -33,7 +33,7 @@ public class CompanyProfile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
-
+        // start *advertising for employees
         ref = FirebaseDatabase.getInstance().getReference(userID);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
