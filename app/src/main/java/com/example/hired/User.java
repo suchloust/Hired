@@ -8,6 +8,8 @@ public class User {
 	private String location;
 	private String experience;
 	private String occupationType;
+	private String userState;
+	private String userTown;
 	
 	/**
 	 * Default constructor. Assumes an age of 14 and no prior experience.
@@ -28,7 +30,19 @@ public class User {
 	 */
 	public User(int userAge, String userLocation, String userExperience, String userOccupation) {
 		age = userAge;
-		location = userLocation;
+		for (int i = 0; i<userLocation.length(); i++){
+			if(userLocation.charAt(i)==','){
+				userLocation = userLocation.substring(i+2);
+				break;
+			}
+		}
+		for (int i = 0; i<userLocation.length(); i++){
+			if(userLocation.charAt(i)==','){
+				userState = userLocation.substring(i+2);
+				userTown = userLocation.substring(0,i);
+				break;
+			}
+		}
 		experience = userExperience;
 		occupationType = userOccupation;
 	}
@@ -58,10 +72,8 @@ public class User {
 		experience = userExperience;
 		occupationType = userOccupation;
 	}
-	
-	public int getAge() {
-		return age;
-	}
+
+	public int getAge() { return age;	}
 	
 	public String getLocation() {
 		return location;
@@ -84,25 +96,50 @@ public class User {
 	//Would accept an input of a Company class?
 	//Would return void or with instance of Company class?
 	//How many matches do we consider a "match" or compatible company? Should we return a percent match?
-	public int matchWithCompany(Company company) {
+	public double matchWithCompany(Company company) {
 		int compatibilityScore = 0;
-		/*if (age.equals(company.getAgeReq())) {
+		if (userState.equals(company.getState())){
 			compatibilityScore++;
-		}*/
-		if (location.equals(company.getLocation())) {
-			//Did this now with a String match, but will refine in future.
-			compatibilityScore++;
+			if(userTown.equals(company.getTown())){
+				compatibilityScore+=2;
+			}
 		}
-		if (experience.equals(company.getExperienceReq())) {
-			//need to implement some logic for this-- should we apply a number system to the ExperienceReq to make 
-			//Comparisons easier? That way if you are over-qualified, you still match?
+		int expScore = getExperienceScore(experience);
+		int companyExpScore = getExperienceScore(company.getExperienceReq());
+		if (expScore==companyExpScore){
+			compatibilityScore ++;
+		}
+		else if (expScore>companyExpScore){
+			int diffy = expScore-companyExpScore + 1;
+			compatibilityScore += diffy;
+		}
+		if (age >= Integer.parseInt(company.getAgeMinimum())) {
 			compatibilityScore++;
 		}
 		if (occupationType.equals(company.getCompanyType())) {
-			compatibilityScore++;
+			compatibilityScore+=3;
 		}
-		return (compatibilityScore/5)*100;
+		return (compatibilityScore);
 	}
-	
+	public int getExperienceScore(String experience){
+		int expScore=0;
+		if(experience.equals("No prior experience")){
+			expScore = 0;
+		}
+		else if (experience.equals("Have held a non-paying internship/job")){
+			expScore = 1;
+		}
+		else if (experience.equals("Have held a paying job")){
+			expScore = 2;
+		}
+		else if (experience.equals("Have held a paying job within the target industry")){
+			expScore = 3;
+		}
+		return expScore;
+	}
+	//To do:
+	//work on location comparison
+		//input state and town
+		//Nested if statements
 	
 }
