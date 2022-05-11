@@ -157,13 +157,12 @@
         android:id="@+id/videos_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/greenBlue"
         android:text="Start finding a job!"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -181,19 +180,78 @@
     <TextView
         android:id="@+id/jobMatch1"
         android:layout_width="495dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="26dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/rubik"
         android:text="job Match 1"
-        android:textAlignment="center"
-        android:textSize="34sp"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matchButton" /><![CDATA[
+        app:layout_constraintTop_toBottomOf="@+id/matchButton" />
+
+    <TextView
+        android:id="@+id/jobMatch2"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 2"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch1" />
+
+    <TextView
+        android:id="@+id/jobMatch3"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 3"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch2" />
+
+    <TextView
+        android:id="@+id/jobMatch4"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 4"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch3" />
+
+    <TextView
+        android:id="@+id/jobMatch5"
+        android:layout_width="495dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/rubik"
+        android:text="job Match 5"
+        android:textAlignment="viewStart"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobMatch4" /><![CDATA[
+
+
 
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
+
 
 ]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

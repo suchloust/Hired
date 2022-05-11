@@ -56,14 +56,16 @@ public class userSurvey extends AppCompatActivity {
             startActivity(intent);
             setPrefs(getApplicationContext(), userName.getText().toString(), "nameLabel");
             setPrefs(getApplicationContext(), userAge.getText().toString(), "ageLabel");
-            setPrefs(getApplicationContext(), getAddress(), "locationLabel");
+            setPrefs(getApplicationContext(), userLocation.getText().toString(), "locationLabel");
             setPrefs(getApplicationContext(), userStreet.getText().toString(), "streetLabel");
             setPrefs(getApplicationContext(), userState.getText().toString(), "stateLabel");
             setPrefs(getApplicationContext(), userZip.getText().toString(), "zipLabel");
-            setPrefs(getApplicationContext(), fieldPreference.getSelectedItem().toString(), "interestLabel");
-            setPrefs(getApplicationContext(), skill1.getSelectedItem().toString(), "skill1Label");
+            setPrefs(getApplicationContext(), getAddress(), "addy");
+            setPrefsInt(getApplicationContext(), fieldPreference.getSelectedItemPosition(), "fieldPrefPosition");
+            setPrefsInt(getApplicationContext(), skill1.getSelectedItemPosition(), "ExpPrefPosition");
             setPrefs(getApplicationContext(), cert1.getText().toString(), "cert1Label");
             setPrefs(getApplicationContext(), cert2.getText().toString(), "cert2Label");
+
         }
     });
 
@@ -81,22 +83,33 @@ public class userSurvey extends AppCompatActivity {
         userState.setText(getPrefs(this, "stateLabel"));
         cert1.setText(getPrefs(this, "cert1Label"));
         cert2.setText(getPrefs(this, "cert2Label"));
+        fieldPreference.setSelection(getPrefsInt(this,"fieldPrefPosition"), true);
+        skill1.setSelection(getPrefsInt(this,"ExpPrefPosition"), true);
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         setPrefs(getApplicationContext(), userName.getText().toString(), "nameLabel");
-        setPrefs(getApplicationContext(),getAddress(), "locationLabel");
+        setPrefs(getApplicationContext(),userLocation.getText().toString(), "locationLabel");
         setPrefs(getApplicationContext(), userAge.getText().toString(), "ageLabel");
         setPrefs(getApplicationContext(), userStreet.getText().toString(), "streetLabel");
         setPrefs(getApplicationContext(), userState.getText().toString(), "stateLabel");
-        setPrefs(getApplicationContext(), fieldPreference.getSelectedItem().toString(), "interestLabel");
-        setPrefs(getApplicationContext(), skill1.getSelectedItem().toString(), "skill1Label");
+        setPrefs(getApplicationContext(), getAddress(), "addy");
+        setPrefsInt(this, fieldPreference.getSelectedItemPosition(), "fieldPrefPosition");
+        setPrefsInt(this, skill1.getSelectedItemPosition(), "ExpPrefPosition");
         setPrefs(getApplicationContext(), userZip.getText().toString(), "zipLabel");
         setPrefs(getApplicationContext(), cert1.getText().toString(), "cert1Label");
         setPrefs(getApplicationContext(), cert2.getText().toString(), "cert2Label");
 
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        setPrefsInt(this, fieldPreference.getSelectedItemPosition(), "fieldPrefPosition");
+        setPrefsInt(this, skill1.getSelectedItemPosition(), "ExpPrefPosition");
     }
 
     public static void setPrefs(Context context, String pref, String key) {
@@ -111,6 +124,20 @@ public class userSurvey extends AppCompatActivity {
         String s1 = sh.getString(key, "");
         return s1;
     }
+
+    public static void setPrefsInt(Context context, int pref, String key){
+        SharedPreferences preferences = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(key, pref);
+        editor.commit();
+    }
+
+    public static int getPrefsInt(Context context, String key) {
+        SharedPreferences sh = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        int s1 = sh.getInt(key, MODE_PRIVATE);
+        return s1;
+    }
+
 
     public static String getAddress(){
         return userStreet.getText().toString()  + ", " + userLocation.getText().toString() + ", " + userState.getText().toString();

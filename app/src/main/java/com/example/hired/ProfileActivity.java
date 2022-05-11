@@ -1,6 +1,7 @@
 package com.example.hired;
 
 import static com.example.hired.userSurvey.getPrefs;
+import static com.example.hired.userSurvey.getPrefsInt;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,10 +38,24 @@ public class ProfileActivity extends AppCompatActivity {
         logo = (ImageView) findViewById(R.id.logoHomeButton);
 
         nameText.setText(getPrefs(this, "nameLabel"));
-        locationText.setText(getPrefs(this, "locationLabel"));
+        locationText.setText(getPrefs(this, "addy"));
         ageText.setText(getPrefs(this, "ageLabel"));
-        fieldPref.setText(getPrefs(this, "interestLabel"));
-        skillPref2.setText(getPrefs(this, "skill1Label"));
+
+        int fieldPos = getPrefsInt(this,"fieldPrefPosition");
+            if(fieldPos==0){fieldPref.setText("None");}
+            else if (fieldPos==1){fieldPref.setText("Food Service");}
+            else if (fieldPos==2){fieldPref.setText("Hospitality");}
+            else if(fieldPos==3){fieldPref.setText("Retail/Sales");}
+            else if (fieldPos==4){fieldPref.setText("Public Health/Medical");}
+            else if (fieldPos==5){fieldPref.setText("Other");}
+
+        int expPos = getPrefsInt(this,"ExpPrefPosition");
+            if (expPos==0){skillPref2.setText("None");}
+            else if (fieldPos==1){skillPref2.setText("No prior experience");}
+            else if (fieldPos==2){skillPref2.setText("Have held a non-paying internship/job");}
+            else if(fieldPos==3){skillPref2.setText("Have held a paying job");}
+            else if (fieldPos==4){skillPref2.setText("Have held a paying job within the target industry");}
+
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this,"cert2Label"));
 
@@ -73,10 +88,12 @@ public class ProfileActivity extends AppCompatActivity {
         matchBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User usy = new User(Integer.parseInt(ageText.getText().toString()), userSurvey.getAddress(),  skillPref2.getText().toString(), fieldPref.getText().toString()) ;
-               Company comper = new  Company("Market Basket", "marketBasket@gmail.com",  "14" , "main st", "worcester", "massachusetts", "Have held a paying job", "Retail/Sales");
+                User usy = new User(Integer.parseInt(ageText.getText().toString()), locationText.getText().toString(),  skillPref2.getText().toString(), fieldPref.getText().toString()) ;
+                Location companyLoc = new Location ("456 Sesame Street", "Worcester", "MA", "01234");
+              Company comper = new  Company("Market Basket", "marketBasket@gmail.com", "12",  companyLoc, "Have held a paying job", "Retail/Sales");
                 double compatScore1 = usy.matchWithCompany(comper);
-                jobMatchText1.setText(comper.getName() + ": " + String.valueOf(compatScore1));
+               jobMatchText1.setText(comper.getName() + " ~" + comper.getLocation().getCity() +", " + comper.getLocation().getState() + ": " + String.valueOf(compatScore1));
+
             }
         });
 
@@ -86,12 +103,27 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         nameText.setText(getPrefs(this, "nameLabel"));
-        locationText.setText(getPrefs(this, "locationLabel"));
+        locationText.setText(getPrefs(this, "addy"));
         ageText.setText(getPrefs(this, "ageLabel"));
-        fieldPref.setText(getPrefs(this, "interestLabel"));
-        skillPref2.setText(getPrefs(this, "skill1Label"));
+
+        int fieldPos = getPrefsInt(this,"fieldPrefPosition");
+        if(fieldPos==0){fieldPref.setText("None");}
+        else if (fieldPos==1){fieldPref.setText("Food Service");}
+        else if (fieldPos==2){fieldPref.setText("Hospitality");}
+        else if(fieldPos==3){fieldPref.setText("Retail/Sales");}
+        else if (fieldPos==4){fieldPref.setText("Public Health");}
+        else if (fieldPos==5){fieldPref.setText("Other");}
+
+        int expPos = getPrefsInt(this,"ExpPrefPosition");
+        if (expPos==0){skillPref2.setText("None");}
+        else if (fieldPos==1){skillPref2.setText("No prior experience");}
+        else if (fieldPos==2){skillPref2.setText("Have held a non-paying internship/job");}
+        else if(fieldPos==3){skillPref2.setText("Have held a paying job");}
+        else if (fieldPos==4){skillPref2.setText("Paying job within the target industry");}
+
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this,"cert2Label"));
+
     }
 
 }

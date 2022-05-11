@@ -8,6 +8,8 @@ public class User {
 	private String location;
 	private String experience;
 	private String occupationType;
+	private String userState;
+	private String userTown;
 	
 	/**
 	 * Default constructor. Assumes an age of 14 and no prior experience.
@@ -28,7 +30,19 @@ public class User {
 	 */
 	public User(int userAge, String userLocation, String userExperience, String userOccupation) {
 		age = userAge;
-		location = userLocation;
+		for (int i = 0; i<userLocation.length(); i++){
+			if(userLocation.charAt(i)==','){
+				userLocation = userLocation.substring(i+2);
+				break;
+			}
+		}
+		for (int i = 0; i<userLocation.length(); i++){
+			if(userLocation.charAt(i)==','){
+				userState = userLocation.substring(i+2);
+				userTown = userLocation.substring(0,i);
+				break;
+			}
+		}
 		experience = userExperience;
 		occupationType = userOccupation;
 	}
@@ -84,9 +98,11 @@ public class User {
 	//How many matches do we consider a "match" or compatible company? Should we return a percent match?
 	public double matchWithCompany(Company company) {
 		int compatibilityScore = 0;
-		if (location.equals(company.getLocation())) {
-			//Did this now with a String match, but will refine in future.
+		if (userState.equals(company.getState())){
 			compatibilityScore++;
+			if(userTown.equals(company.getTown())){
+				compatibilityScore+=2;
+			}
 		}
 		int expScore = getExperienceScore(experience);
 		int companyExpScore = getExperienceScore(company.getExperienceReq());
@@ -123,5 +139,7 @@ public class User {
 	}
 	//To do:
 	//work on location comparison
+		//input state and town
+		//Nested if statements
 	
 }
