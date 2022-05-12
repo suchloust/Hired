@@ -98,9 +98,9 @@ public class User {
 	//How many matches do we consider a "match" or compatible company? Should we return a percent match?
 	public double matchWithCompany(Company company) {
 		int compatibilityScore = 0;
-		if (userState.equals(company.getState())){
+		if (userState.equals(company.getLocation().getState())){
 			compatibilityScore++;
-			if(userTown.equals(company.getTown())){
+			if(userTown.equals(company.getLocation().getCity())){
 				compatibilityScore+=2;
 			}
 		}
