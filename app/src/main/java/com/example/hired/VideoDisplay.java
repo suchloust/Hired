@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -47,23 +48,53 @@ public class VideoDisplay extends Activity
         auth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
 
-        ref.addValueEventListener(new ValueEventListener() {
+       /* Task<DataSnapshot> tasky = ref.getRoot().get();
+
+        tasky.addOnSuccessListener(new OnSuccessListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onSuccess(Object o) {
+                DataSnapshot snapshot = (DataSnapshot) tasky.getResult();
                 for (DataSnapshot snappingTurtle : snapshot.getChildren()){
                     Company company = snappingTurtle.getValue(Company.class);
                     urls.add(company.getUrl());
                 }
 
+            }});
+
+        tasky.addOnFailureListener(new OnFailureListener(){
+            public void onFailure(Exception e){
+                urls.add("youtube.com");
+            }
+        });*/
+
+       /* ArrayList <Company> comps = new ArrayList<Company>();
+        CompanyProfile prof = new CompanyProfile();
+
+        //comps = prof.getCompanies();
+
+        for (int i = 0; i<comps.size();i++)
+            urls.add(comps.get(i).getUrl());
+
+        if (urls.isEmpty())
+            urls.add("youtube.com");*/
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.d("ArrayCheck", "In the method.");
+                for (DataSnapshot snap : snapshot.getChildren()) {
+                    Company comp = snap.getValue(Company.class);
+                    urls.add(comp.getUrl());
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                urls.add("www.youtube.com");
+
             }
         });
 
-
+        urls.add("www.youtube.com");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
@@ -115,8 +146,11 @@ public class VideoDisplay extends Activity
         url++;
         if (url<url_list.size()-1)
         mWebView.loadUrl(url_list.get(url));
-        //eventually add a message saying "you've reached the end"
-        //or don't show the next button on the last video
+        else{
+            Toast.makeText(getApplicationContext(),"This is the last video.",
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     /**
@@ -132,7 +166,7 @@ public class VideoDisplay extends Activity
         mWebView.loadUrl(url_list.get(url));
 
         else{
-            Toast.makeText(getApplicationContext(),"hey bestie this is the first vid ",
+            Toast.makeText(getApplicationContext(),"This is the first video.",
                     Toast.LENGTH_SHORT).show();
         }
     }
