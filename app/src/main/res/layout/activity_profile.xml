@@ -8,174 +8,234 @@
     tools:context=".ProfileActivity">
 
     <TextView
-        android:id="@+id/filter4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:adjustViewBounds="true"
-        android:text="from survey"
-        app:layout_constraintStart_toEndOf="@+id/filter3"
-        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
-
-    <ImageView
-        android:id="@+id/logoHomeButton"
-        android:layout_width="93dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
+        android:id="@+id/reqs_prof3"
+        android:layout_width="286dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_horizontal"
+        android:text="@string/likedStr"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minilogo" />
+        app:layout_constraintTop_toBottomOf="@+id/filter4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/editFiltersButton"
+        android:layout_width="152dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/company_button"
+        android:backgroundTint="@color/Blue"
+        android:fontFamily="@font/rubik"
+        android:gravity="center"
+        android:text="@string/edit_compprof"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/filter4"
+        android:layout_width="330dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:fontFamily="@font/rubik"
+        android:gravity="left|center_vertical"
+        android:text="from survey"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/CertLabel"
+        app:layout_constraintTop_toBottomOf="@+id/filter3" />
 
     <TextView
         android:id="@+id/userName"
-        android:layout_width="wrap_content"
+        android:layout_width="425dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/rubik"
+        android:gravity="center"
         android:text="name"
-        android:textSize="24sp"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="74dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_action_name"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="496dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/bg_circle"
-        android:cropToPadding="false"
-        android:outlineProvider="background"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/newprofilecase" />
-
     <TextView
         android:id="@+id/filter3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="330dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/rubik"
+        android:gravity="left|center_vertical"
         android:text="from survey"
-        app:layout_constraintStart_toEndOf="@+id/filter2"
-        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/CertLabel"
+        app:layout_constraintTop_toBottomOf="@+id/filter2" />
 
     <TextView
         android:id="@+id/filter2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="330dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/rubik"
+        android:gravity="left|center_vertical"
         android:text="from survey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.345"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/priorExpLabel"
+        app:layout_constraintTop_toBottomOf="@+id/filter1" />
 
     <TextView
         android:id="@+id/filter1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="from survey"
-        app:layout_constraintEnd_toStartOf="@+id/filter2"
-        app:layout_constraintTop_toBottomOf="@+id/filtersButton" />
-
-    <TextView
-        android:id="@+id/likedCompaniesLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="330dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/rubik"
-        android:text="@string/likedStr"
-        android:textSize="24sp"
+        android:gravity="left|center_vertical"
+        android:text="from survey"
+        android:textColor="@color/Blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fieldStrLabel"
+        app:layout_constraintTop_toBottomOf="@+id/reqs_prof2" />
+
+    <Button
+        android:id="@+id/fieldStrLabel"
+        android:layout_width="204dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/fieldOfInterestLabel"
+        android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter2" />
+        app:layout_constraintTop_toBottomOf="@+id/reqs_prof2"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/priorExpLabel"
+        android:layout_width="204dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/priorExperienceStr"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldStrLabel"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/CertLabel"
+        android:layout_width="204dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/TealBlue"
+        android:capitalize="none"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_vertical"
+        android:text="@string/certLabel"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorExpLabel"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/rubik"
         android:text="location from survey"
-        android:textSize="18sp"
+        android:textColor="@color/DarkBlue"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <TextView
         android:id="@+id/ageLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/rubik"
         android:text="age from survey"
-        android:textSize="18sp"
+        android:textColor="@color/DarkBlue"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationLabel" />
 
-    <Button
-        android:id="@+id/filtersButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/purple_700"
-        android:text="Filters"
+    <TextView
+        android:id="@+id/reqs_prof2"
+        android:layout_width="108dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/rubik"
+        android:gravity="clip_horizontal"
+        android:text="@string/filtersStr"
+        android:textColor="@color/RoyalBlue"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageLabel" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/videos_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/greenBlue"
-        android:text="Start finding a job!"
+        android:layout_width="430dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="140dp"
+        android:background="@drawable/company_button"
+        android:backgroundTint="@color/Blue"
+        android:fontFamily="@font/rubik"
+        android:text="@string/watchVideoButtonStr"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/matchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_marginTop="22dp"
-        android:backgroundTint="@color/green2"
-        android:text="Match me with jobs!"
+        android:layout_width="152dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/company_button"
+        android:backgroundTint="@color/TealBlue"
+        android:fontFamily="@font/rubik"
+        android:text="@string/matchButtonLabel"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/likedCompaniesLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/filter4"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/jobMatch1"
@@ -189,7 +249,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matchButton" />
+        app:layout_constraintTop_toBottomOf="@+id/reqs_prof3" />
 
     <TextView
         android:id="@+id/jobMatch2"

@@ -39,8 +39,8 @@
         android:id="@+id/comp_survey_button"
         android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
         android:background="@drawable/company_button"
         android:backgroundTint="@color/Blue"
         android:fontFamily="@font/rubik"
@@ -95,8 +95,8 @@
 
     <TextView
         android:id="@+id/reqs_prof"
-        android:layout_width="303dp"
-        android:layout_height="32dp"
+        android:layout_width="296dp"
+        android:layout_height="37dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/rubik"

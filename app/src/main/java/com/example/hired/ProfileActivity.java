@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ProfileActivity extends AppCompatActivity {
-    Button filtersBut, videosBut, matchBut;
+    Button editFilters, videosBut, matchBut;
     TextView locationText, ageText, fieldPref, skillPref4, skillPref2, skillPref3, nameText, jobMatchText1;
     ImageView logo;
 
@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        filtersBut = (Button) findViewById(R.id.filtersButton);
+        editFilters = (Button) findViewById(R.id.editFiltersButton);
         videosBut = (Button) findViewById(R.id.videos_button);
         matchBut = (Button) findViewById(R.id.matchButton);
         locationText = (TextView) findViewById(R.id.locationLabel);
@@ -35,7 +35,6 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref3 = (TextView) findViewById(R.id.filter3);
         ageText = (TextView) findViewById(R.id.ageLabel);
         jobMatchText1 = (TextView) findViewById(R.id.jobMatch1);
-        logo = (ImageView) findViewById(R.id.logoHomeButton);
 
         nameText.setText(getPrefs(this, "nameLabel"));
         locationText.setText(getPrefs(this, "addy"));
@@ -60,15 +59,6 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref4.setText(getPrefs(this,"cert2Label"));
 
       //  Places.Initialize(getApplicationContext(), "");
-
-        logo.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
         videosBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }});
 
-        filtersBut.setOnClickListener(new View.OnClickListener() {
+        editFilters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), userSurvey.class);
@@ -90,9 +80,9 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 User usy = new User(Integer.parseInt(ageText.getText().toString()), locationText.getText().toString(),  skillPref2.getText().toString(), fieldPref.getText().toString()) ;
                 Location companyLoc = new Location ("456 Sesame Street", "Worcester", "MA", "01234");
-              Company comper = new  Company("Market Basket", "marketBasket@gmail.com", "12",  companyLoc, "Have held a paying job", "Retail/Sales");
-                double compatScore1 = usy.matchWithCompany(comper);
-               jobMatchText1.setText(comper.getName() + " ~" + comper.getLocation().getCity() +", " + comper.getLocation().getState() + ": " + String.valueOf(compatScore1));
+              //Company comper = new  Company("Market Basket", "marketBasket@gmail.com", "12",  companyLoc, "Have held a paying job", "Retail/Sales");
+                //double compatScore1 = usy.matchWithCompany(comper);
+               //jobMatchText1.setText(comper.getName() + " ~" + comper.getLocation().getCity() +", " + comper.getLocation().getState() + ": " + String.valueOf(compatScore1));
 
             }
         });
@@ -124,6 +114,11 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this,"cert2Label"));
 
+    }
+
+    public void goHome(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

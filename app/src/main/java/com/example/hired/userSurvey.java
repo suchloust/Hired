@@ -37,7 +37,6 @@ public class userSurvey extends AppCompatActivity {
         saveSurvey = (Button) findViewById(R.id.saveButton);
         fieldPreference = (Spinner) findViewById(R.id.interestSpinner);
         skill1 = (Spinner) findViewById(R.id.skill1spinner);
-        logo = (ImageView) findViewById(R.id.miniLogo);
         cert1 = (EditText) findViewById(R.id.cert1Input);
         cert2 = (EditText) findViewById(R.id.cert2Input);
         logo.setOnClickListener(new View.OnClickListener() {
