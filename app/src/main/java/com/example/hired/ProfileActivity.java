@@ -182,12 +182,6 @@ public class ProfileActivity extends AppCompatActivity {
             jobMatchText5.setText(companies.get(4).getName() + " ~" + companies.get(4).getLocation().getCity() +", " + companies.get(4).getLocation().getState() + ": " + String.valueOf(usy.matchWithCompany(companies.get(4))));
         }
 
-    }
+}}
 
-    /*public ArrayList<Company> getCompanies(){
-       ArrayList<String> filler = new ArrayList<String>();
-        for (int n=0; n<companies.size(); n++) {
-            filler.add(companies.get(n).getUrl());
-        }
-    }*/
-}
+
