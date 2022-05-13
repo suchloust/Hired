@@ -39,14 +39,7 @@ public class userSurvey extends AppCompatActivity {
         skill1 = (Spinner) findViewById(R.id.skill1spinner);
         cert1 = (EditText) findViewById(R.id.cert1Input);
         cert2 = (EditText) findViewById(R.id.cert2Input);
-        logo.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                Intent intenty = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intenty);
-            }
-        });
         saveSurvey.setOnClickListener(new View.OnClickListener(){
 
         @Override

@@ -1,5 +1,8 @@
 package com.example.hired;
 
+/**
+ * A class that models a User and stores their information.
+ */
 public class User {
 
 	private int age;
@@ -10,6 +13,7 @@ public class User {
 	private String occupationType;
 	private String userState;
 	private String userTown;
+	private String certification;
 	
 	/**
 	 * Default constructor. Assumes an age of 14 and no prior experience.
@@ -104,14 +108,15 @@ public class User {
 				compatibilityScore+=2;
 			}
 		}
+
 		int expScore = getExperienceScore(experience);
 		int companyExpScore = getExperienceScore(company.getExperienceReq());
 		if (expScore==companyExpScore){
 			compatibilityScore ++;
 		}
 		else if (expScore>companyExpScore){
-			int diffy = expScore-companyExpScore + 1;
-			compatibilityScore += diffy;
+			int diff = expScore-companyExpScore + 1;
+			compatibilityScore += diff;
 		}
 		if (age >= Integer.parseInt(company.getAgeMinimum())) {
 			compatibilityScore++;
@@ -119,9 +124,10 @@ public class User {
 		if (occupationType.equals(company.getCompanyType())) {
 			compatibilityScore+=3;
 		}
-		return (compatibilityScore);
+		return compatibilityScore*10;
 	}
-	public int getExperienceScore(String experience){
+
+	private int getExperienceScore(String experience){
 		int expScore=0;
 		if(experience.equals("No prior experience")){
 			expScore = 0;

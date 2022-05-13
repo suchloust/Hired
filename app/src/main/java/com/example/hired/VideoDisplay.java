@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class VideoDisplay extends Activity
 {
     private WebView mWebView;
-    private boolean mIsPaused = false;
+    private boolean mIsPaused;
     private Button userBut;
     private Button previous;
     private Button advance;
@@ -42,12 +42,13 @@ public class VideoDisplay extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        mIsPaused = false;
         url = 0;
         urls = new ArrayList<String>();
         auth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
 
-        ref.addValueEventListener(new ValueEventListener() {
+        /*ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snappingTurtle : snapshot.getChildren()){
@@ -61,9 +62,13 @@ public class VideoDisplay extends Activity
             public void onCancelled(@NonNull DatabaseError error) {
                 urls.add("www.youtube.com");
             }
-        });
+        });*/
 
+        /*for (int i = 0; i<ProfileActivity.getCompArray().size();i++)
+            urls.add(ProfileActivity.getCompArray().get(i).getUrl());
 
+        if (urls.isEmpty())
+            urls.add("youtube.com");*/
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
