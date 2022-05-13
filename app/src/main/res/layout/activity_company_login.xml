@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyEmail" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signInButton"
         android:layout_width="470dp"
         android:layout_height="61dp"
@@ -61,9 +61,11 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="65dp"
         android:backgroundTint="@color/Blue"
+        android:background="@drawable/company_button"
         android:onClick="signIn"
         android:text="@string/signInNowStr"
         android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyPassword" />

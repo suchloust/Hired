@@ -16,7 +16,7 @@
     <string name="userPasswordHint">Enter Password</string>
     <string name="submitButtonLabel">Get Started</string>
     <string name="filtersStr">Filters</string>
-    <string name="likedStr">Liked Companies</string>
+    <string name="likedStr">Matched Companies</string>
     <string name="answerFieldHintStr">Enter in your response</string>
     <string name="submitAnswerStr">Save</string>
     <string name="nextQuestionStr">Next</string>
@@ -45,16 +45,21 @@
     <string name="companyCertHint">Enter required certifications</string>
     <string name="welcomeString">"Start your search below. "</string>
     <string name="companyEmailHintStr">Enter an email.</string>
-    <string name="companyPasswordHintStr">Enter your password.</string>
-    <string name="companyConfirmHintStr">Confirm your password.</string>
+    <string name="companyPasswordHintStr">Enter your password (min. 6 characters)</string>
+    <string name="companyConfirmHintStr">Confirm your password (min. 6 characters)</string>
     <string name="registerStr">Sign up now</string>
     <string name="alreadyUserStr">Already a user? Sign in here.</string>
     <string name="loginStr">Sign into your company account below.</string>
     <string name="signInNowStr">Sign in</string>
     <string name="newUserStr">Are you new here? Sign up here.</string>
+    <string name="experienceReqLabel">Required Experience:</string>
+    <string name="certificationsLabel">Required Certification:</string>
+    <string name="youTubeLabel">Your Advertisements:</string>
+    <string name="urlStr">Enter in your YouTube URL</string>
     <string name="loc_sentient">Location</string>
     <string name="industry_sentient">Industry</string>
     <string name="reqs_sentient">Your Requirements</string>
+    <string name="reqs_sentient">Age and Experience\nRequirements</string>
     <string name="youtubePlaylist">YouTube Playlist URL</string>
     <string name="company_companyprofile">Company Name</string>
     <string name="location_companyprofile">Location</string>
@@ -75,12 +80,25 @@
     <string name="todo" />
     <string name="stateInputHint">State:</string>
     <string name="ageHint">Enter Age:</string>
-    <string name="userSurveySubButton">Done</string>
+    <string name="userSurveySubButton">Save</string>
     <string name="nameText">Name:</string>
     <string name="ageText">Age:</string>
     <string name="experienceReqLabel">Required Experience:</string>
     <string name="certificationsLabel">Required Certification:</string>
     <string name="youTubeLabel">Your Advertisements:</string>
+
+
+
+    <string name="filtersLabel">Filters</string>
+    <string name="matchButtonLabel">Match</string>
+    <string name="watchVideoButtonStr">Learn more about your matches</string>
+    <string name="fieldOfInterestLabel">Field of interest</string>
+    <string name="priorExperienceStr">Prior experience:</string>
+    <string name="certLabel">Certifications:</string>
+
+
+
+
 
 
 

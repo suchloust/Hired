@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+/**
+ * This class displays the Company information of a logged in company user.
+ */
 public class CompanyProfile extends AppCompatActivity {
     private Button edit;
     private DatabaseReference ref;
@@ -33,7 +36,7 @@ public class CompanyProfile extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         userID = user.getUid();
-
+        // start *advertising for employees
         ref = FirebaseDatabase.getInstance().getReference(userID);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
