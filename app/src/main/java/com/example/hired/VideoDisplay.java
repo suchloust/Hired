@@ -1,7 +1,6 @@
 package com.example.hired;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class VideoDisplay extends Activity
+public class VideoDisplay extends AppCompatActivity
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
@@ -48,53 +48,22 @@ public class VideoDisplay extends Activity
         auth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
 
-       /* Task<DataSnapshot> tasky = ref.getRoot().get();
-
-        tasky.addOnSuccessListener(new OnSuccessListener() {
-            @Override
-            public void onSuccess(Object o) {
-                DataSnapshot snapshot = (DataSnapshot) tasky.getResult();
-                for (DataSnapshot snappingTurtle : snapshot.getChildren()){
-                    Company company = snappingTurtle.getValue(Company.class);
-                    urls.add(company.getUrl());
-                }
-
-            }});
-
-        tasky.addOnFailureListener(new OnFailureListener(){
-            public void onFailure(Exception e){
-                urls.add("youtube.com");
-            }
-        });*/
-
-       /* ArrayList <Company> comps = new ArrayList<Company>();
-        CompanyProfile prof = new CompanyProfile();
-
-        //comps = prof.getCompanies();
-
-        for (int i = 0; i<comps.size();i++)
-            urls.add(comps.get(i).getUrl());
-
-        if (urls.isEmpty())
-            urls.add("youtube.com");*/
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.d("ArrayCheck", "In the method.");
-                for (DataSnapshot snap : snapshot.getChildren()) {
+                for (DataSnapshot snap1 : snapshot.getChildren()) {
+                    for (DataSnapshot snap : snap1.getChildren()){
                     Company comp = snap.getValue(Company.class);
                     urls.add(comp.getUrl());
-                }
+                }}
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                urls.add("www.youtube.com");
             }
         });
-
-        urls.add("www.youtube.com");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
