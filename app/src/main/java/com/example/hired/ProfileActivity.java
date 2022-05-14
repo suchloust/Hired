@@ -8,22 +8,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity implements Serializable {
     private DatabaseReference ref;
     private ArrayList companies;
     private Button videosBut, matchBut;
@@ -58,10 +57,10 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snap1 : snapshot.getChildren()) {
-                    for(DataSnapshot snap: snap1.getChildren()){
+                    for(DataSnapshot snap : snap1.getChildren()){
                         Company comp = snap.getValue(Company.class);
                         companies.add(comp);
-                        Log.d("ProfileActivity", "Company name:" + comp.getName());
+                        Log.d("ProfileActivity", "Company url:" + comp.getUrl());
                     }
                 }
             }
@@ -71,6 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+
 
         nameText.setText(getPrefs(this, "nameLabel"));
         locationText.setText(getPrefs(this, "addy"));
@@ -107,12 +107,11 @@ public class ProfileActivity extends AppCompatActivity {
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this, "cert2Label"));
 
-      //  Places.Initialize(getApplicationContext(), "");
+
         videosBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), VideoDisplay.class);
-                startActivity(intent);
+                arrayToVideo(companies);
             }
         });
 
@@ -128,6 +127,7 @@ public class ProfileActivity extends AppCompatActivity {
         matchBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("poorvi method","poorvi param: " + companies);
                 matchCompany(companies);
             }
         });
@@ -186,7 +186,7 @@ public class ProfileActivity extends AppCompatActivity {
                 companies.set(position, temp);
             }
         }
-        //companies.sort((c1,c2) -> usy.matchWithCompany(c1).compareTo(usy.matchWithCompany(c2)));
+
         jobMatchText1.setText(companies.get(companies.size()-1).getName() + " ~" + companies.get(companies.size()-1).getLocation().getCity() +", " + companies.get(companies.size()-1).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-1)))+"%");
         jobMatchText2.setText(companies.get(companies.size()-2).getName() + " ~" + companies.get(companies.size()-2).getLocation().getCity() +", " + companies.get(companies.size()-2).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-2)))+"%");
         jobMatchText3.setText(companies.get(companies.size()-3).getName() + " ~" + companies.get(companies.size()-3).getLocation().getCity() +", " + companies.get(companies.size()-3).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-3)))+"%");
@@ -194,10 +194,25 @@ public class ProfileActivity extends AppCompatActivity {
         jobMatchText5.setText(companies.get(companies.size()-5).getName() + " ~" + companies.get(companies.size()-5).getLocation().getCity() +", " + companies.get(companies.size()-5).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-5)))+"%");
     }
 
+    private void arrayToVideo(ArrayList<Company> c) {
+        ArrayList<String> urls = new ArrayList<String>();
+        for (int i=0; i<c.size(); i++){
+            urls.add(c.get(i).getUrl());
+        }
+
+        Log.d("testing","companies urls: " + urls);
+        Intent intent = new Intent(ProfileActivity.this, VideoDisplay.class);
+        intent.putExtra("key", urls);
+        startActivity(intent);
+    }
+
     public void goHome(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }
+
+
 
 
