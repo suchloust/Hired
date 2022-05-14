@@ -8,15 +8,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -26,8 +25,9 @@ import java.util.ArrayList;
 /**
  * A class that displays user information on the User profile page. The data is stored locally and redisplayed using Shared Preferences.
  */
-public class ProfileActivity extends AppCompatActivity {
+
 public class ProfileActivity extends AppCompatActivity implements Serializable {
+
     private DatabaseReference ref;
     private ArrayList companies;
     private Button videosBut, matchBut;
