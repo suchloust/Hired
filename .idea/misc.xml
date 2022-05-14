@@ -31,6 +31,8 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33706003824869796" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24522094726562504" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.11796875" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2798507462686567" />
         <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.27628173828125" />
         <entry key="app/src/main/res/layout/activity_videos.xml" value="0.25" />

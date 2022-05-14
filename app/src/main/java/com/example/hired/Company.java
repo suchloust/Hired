@@ -2,7 +2,8 @@ package com.example.hired;
 /**
  * A class that stores the information of a Company object.
  */
-public class Company {
+
+public class Company  {
 
 	private String name;
 	private String email;

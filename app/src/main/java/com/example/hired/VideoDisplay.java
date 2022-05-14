@@ -1,9 +1,9 @@
 package com.example.hired;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -11,23 +11,21 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class VideoDisplay extends Activity
+public class VideoDisplay extends AppCompatActivity implements Serializable
 {
     private WebView mWebView;
-    private boolean mIsPaused;
+    private boolean mIsPaused = false;
     private Button userBut;
     private Button previous;
     private Button advance;
@@ -42,33 +40,20 @@ public class VideoDisplay extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        mIsPaused = false;
         url = 0;
         urls = new ArrayList<String>();
         auth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
 
-        /*ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot snappingTurtle : snapshot.getChildren()){
-                    Company company = snappingTurtle.getValue(Company.class);
-                    urls.add(company.getUrl());
-                }
 
-            }
+        urls = (ArrayList<String>) getIntent().getSerializableExtra("key");
+        Log.d("testing","video array: " + urls);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                urls.add("www.youtube.com");
-            }
-        });*/
+        if(urls.isEmpty()){
+            urls.add("youtube.com");
+        }
 
-        /*for (int i = 0; i<ProfileActivity.getCompArray().size();i++)
-            urls.add(ProfileActivity.getCompArray().get(i).getUrl());
 
-        if (urls.isEmpty())
-            urls.add("youtube.com");*/
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
@@ -119,8 +104,11 @@ public class VideoDisplay extends Activity
         url++;
         if (url<url_list.size()-1)
         mWebView.loadUrl(url_list.get(url));
-        //eventually add a message saying "you've reached the end"
-        //or don't show the next button on the last video
+        else{
+            Toast.makeText(getApplicationContext(),"This is the last video.",
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     /**
@@ -136,7 +124,7 @@ public class VideoDisplay extends Activity
         mWebView.loadUrl(url_list.get(url));
 
         else{
-            Toast.makeText(getApplicationContext(),"hey bestie this is the first vid ",
+            Toast.makeText(getApplicationContext(),"This is the first video.",
                     Toast.LENGTH_SHORT).show();
         }
     }
