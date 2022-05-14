@@ -90,12 +90,6 @@
     <string name="certLabel">Certifications:</string>
 
 
-
-
-
-
-
-
     <string-array name="experienceLevels">
         <item>No prior experience.</item>
         <item>Have held a non-paying/internship job</item>

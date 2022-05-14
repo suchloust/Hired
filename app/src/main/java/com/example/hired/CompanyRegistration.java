@@ -17,9 +17,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * A class containing the logic for companies users to create their WorkSpace accounts, which are stored using Firebase Authentication.
+ */
 public class CompanyRegistration extends AppCompatActivity {
     private FirebaseAuth auth;
 
+    /**
+     * Setting the content view to the activity_company_registration.xml page, initializing the FirebaseAuth, auth.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +34,12 @@ public class CompanyRegistration extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
     }
 
+    /**
+     * Register method to create WorkSpace accounts for new company users. The methods takes the input email and password from the
+     * activity_company_registration.xml EditTexts. The method calls the confirmPassword method to confirm that the password and
+     * the confirmation are the same. If the same, a user is created using the createUserWithEmailAndPassword method from Firebase Auth.
+     * @param v
+     */
     public void register(View v){
         EditText companyEmail = findViewById(R.id.companyEmail);
         EditText companyPassword = findViewById(R.id.companyPassword);
@@ -61,6 +74,9 @@ public class CompanyRegistration extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks that the current user is not null and starts the CompanyProfile activity.
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -72,6 +88,12 @@ public class CompanyRegistration extends AppCompatActivity {
         }
     }
 
+    /**
+     * confirms whether the String password and String confirmation parameters are equal (case-sensitive).
+     * @param password
+     * @param confirmation
+     * @return true if both Strings are equal or false if the String are not equal.
+     */
     private boolean confirmPassword(String password, String confirmation){
         if (password.equals(confirmation)){
             return true;
@@ -82,11 +104,19 @@ public class CompanyRegistration extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * When the "Already a user? Sign in here." button is clicked, the CompanyLogin activity is started.
+     * @param v
+     */
     public void performCompanyLogin(View v){
         Intent intent = new Intent(this, CompanyLogin.class);
         startActivity(intent);
     }
 
+    /**
+     * Starts the CompanySurveyPage activity when called. This method is called when the user is successfully made an account.
+     * @param v
+     */
     private void performCompanySurvey(View v){
         Intent intent = new Intent(this, CompanySurveyPage.class);
         startActivity(intent);

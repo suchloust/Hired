@@ -6,8 +6,6 @@ package com.example.hired;
 public class User {
 
 	private int age;
-	//Right now I have the location as a String, but I was thinking of making that its own class? Would that make it easier to
-	//set an actual location? Maybe the class object could hold coordinates of the specified location?
 	private String location;
 	private String experience;
 	private String occupationType;
@@ -77,29 +75,134 @@ public class User {
 		occupationType = userOccupation;
 	}
 
+	/**
+	 * Returns the age of the User.
+	 * @return age of the user.
+	 */
 	public int getAge() { return age;	}
-	
+
+	/**
+	 * Returns the location of the user
+	 * @return location, location of the user
+	 */
 	public String getLocation() {
 		return location;
 	}
-	
+
+	/**
+	 * Returns the experience levels of the user
+	 * @return, experience, experience levels of the user.
+	 */
 	public String getExperienceLevel() {
 		return experience;
 	}
-	
-	public String getOccupationPreference() {
+
+	/**
+	 * Returns the occupation type of the user
+	 * @return occupationType, occupation preference of the user.
+	 */
+	public String getOccupationType() {
 		return occupationType;
 	}
-	
-	//a method to set an actual location from the user provided String input? 
-	public void setLocation() {
-		
+
+	/**
+	 * Sets the age of the user
+	 * @param age, age of the user.
+	 */
+	public void setAge(int age) {
+		this.age = age;
 	}
-	
-	//a method to match the user with companies who match with their filters. 
-	//Would accept an input of a Company class?
-	//Would return void or with instance of Company class?
-	//How many matches do we consider a "match" or compatible company? Should we return a percent match?
+
+	/**
+	 * Sets the location of the user
+	 * @param location, location of the user
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	/**
+	 * Returns the experience of the user
+	 * @return experience
+	 */
+	public String getExperience() {
+		return experience;
+	}
+
+	/**
+	 * Sets the experience of the user.
+	 * @param experience, experience of the user.
+	 */
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	/**
+	 * Sets the occupation preference of the user
+	 * @param occupationType
+	 */
+	public void setOccupationType(String occupationType) {
+		this.occupationType = occupationType;
+	}
+
+	/**
+	 * Returns the state of the user
+	 * @return userState
+	 */
+	public String getUserState() {
+		return userState;
+	}
+
+	/**
+	 * Sets the state of the user
+	 * @param userState
+	 */
+	public void setUserState(String userState) {
+		this.userState = userState;
+	}
+
+	/**
+	 * Returns the town of the user
+	 * @return useTown
+	 */
+	public String getUserTown() {
+		return userTown;
+	}
+
+	/**
+	 * Sets the town of the user
+	 * @param userTown
+	 */
+	public void setUserTown(String userTown) {
+		this.userTown = userTown;
+	}
+
+	/**
+	 * Returns the certifications of the user
+	 * @return certification
+	 */
+	public String getCertification() {
+		return certification;
+	}
+
+	/**
+	 * Sets the certifications of the user.
+	 * @param certification
+	 */
+	public void setCertification(String certification) {
+		this.certification = certification;
+	}
+
+	/**
+	 * A method that calculates a compatibility score for the user and a parameter Company object.
+	 * Prioritized (in order) occupation type, location, experience, and age
+	 * For occupation type, if the type of the user matches the type of the Company (from the given options), 3 points are given.
+	 * For location, checks if the user location is equal to the state and town of the Company (2x points are given if also the town is equal).
+	 * For experience, it calls the getExperienceScore method for the user and company to compare them. If the user experience is greater than the required company experience requirement, more points are given.
+	 * For age, checks if the user age is greater than the company minimum working age.
+	 * @param company
+	 * @return
+	 */
 	public double matchWithCompany(Company company) {
 		int compatibilityScore = 0;
 		if (userState.equals(company.getLocation().getState())){
@@ -127,6 +230,11 @@ public class User {
 		return compatibilityScore*10;
 	}
 
+	/**
+	 * Calculates the experience score for a user or company object. Assigns a numerical values to each of the experience levels.
+	 * @param experience
+	 * @return
+	 */
 	private int getExperienceScore(String experience){
 		int expScore=0;
 		if(experience.equals("No prior experience")){
@@ -143,9 +251,4 @@ public class User {
 		}
 		return expScore;
 	}
-	//To do:
-	//work on location comparison
-		//input state and town
-		//Nested if statements
-	
 }

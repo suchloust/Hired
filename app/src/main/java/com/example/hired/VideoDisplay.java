@@ -77,7 +77,6 @@ public class VideoDisplay extends Activity
         advance = (Button) findViewById(R.id.proceed);
 
         //Button Methods
-
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

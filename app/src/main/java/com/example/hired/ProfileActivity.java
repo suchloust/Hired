@@ -23,6 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * A class that displays user information on the User profile page. The data is stored locally and redisplayed using Shared Preferences.
+ */
 public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference ref;
     private ArrayList companies;
@@ -30,16 +33,24 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView locationText, ageText, fieldPref, skillPref4, skillPref2, skillPref3, nameText, jobMatchText1,jobMatchText2,jobMatchText3,jobMatchText4,jobMatchText5;
     private Button editFilters;
 
-
+    /**
+     * Setting the content view to activity_profile.xml. Initialized all the activity_main TextViews and Buttons.
+     * Initializes the FirebaseDatabase reference, ref. Made a ValueOnClickListener to get a DataSnapshot of the Realtime Database.
+     * Adds all of the companies objected stored in the Realtime Database to an ArrayList<Company> companies.
+     * Displays all of the user inputted data into the TextViews using Shared Preferences.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
         companies = new ArrayList<Company>();
 
         editFilters = (Button) findViewById(R.id.editFiltersButton);
         videosBut = (Button) findViewById(R.id.videos_button);
         matchBut = (Button) findViewById(R.id.matchButton);
+
         locationText = (TextView) findViewById(R.id.locationLabel);
         fieldPref = (TextView) findViewById(R.id.filter1);
         nameText = (TextView) findViewById(R.id.userName);
@@ -76,33 +87,20 @@ public class ProfileActivity extends AppCompatActivity {
         locationText.setText(getPrefs(this, "addy"));
         ageText.setText(getPrefs(this, "ageLabel"));
 
-        int fieldPos = getPrefsInt(this, "fieldPrefPosition");
-        if (fieldPos == 0) {
-            fieldPref.setText("None");
-        } else if (fieldPos == 1) {
-            fieldPref.setText("Food Service");
-        } else if (fieldPos == 2) {
-            fieldPref.setText("Hospitality");
-        } else if (fieldPos == 3) {
-            fieldPref.setText("Retail/Sales");
-        } else if (fieldPos == 4) {
-            fieldPref.setText("Public Health/Medical");
-        } else if (fieldPos == 5) {
-            fieldPref.setText("Other");
-        }
+        int fieldPos = getPrefsInt(this,"fieldPrefPosition");
+        if(fieldPos==0){fieldPref.setText("None");}
+        else if (fieldPos==1){fieldPref.setText("Food Service");}
+        else if (fieldPos==2){fieldPref.setText("Hospitality");}
+        else if(fieldPos==3){fieldPref.setText("Retail/Sales");}
+        else if (fieldPos==4){fieldPref.setText("Public Health");}
+        else if (fieldPos==5){fieldPref.setText("Other");}
 
-        int expPos = getPrefsInt(this, "ExpPrefPosition");
-        if (expPos == 0) {
-            skillPref2.setText("None");
-        } else if (fieldPos == 1) {
-            skillPref2.setText("No prior experience");
-        } else if (fieldPos == 2) {
-            skillPref2.setText("Have held a non-paying internship/job");
-        } else if (fieldPos == 3) {
-            skillPref2.setText("Have held a paying job");
-        } else if (fieldPos == 4) {
-            skillPref2.setText("Have held a paying job within the target industry");
-        }
+        int expPos = getPrefsInt(this,"ExpPrefPosition");
+        if (expPos==0){skillPref2.setText("None");}
+        else if (fieldPos==1){skillPref2.setText("No prior experience");}
+        else if (fieldPos==2){skillPref2.setText("Have held a non-paying internship/job");}
+        else if(fieldPos==3){skillPref2.setText("Have held a paying job");}
+        else if (fieldPos==4){skillPref2.setText("Paying job within the target industry");}
 
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this, "cert2Label"));
@@ -133,6 +131,9 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Redisplays all the user data stored locally on the profile page using Shared Preferences.
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -140,38 +141,32 @@ public class ProfileActivity extends AppCompatActivity {
         locationText.setText(getPrefs(this, "addy"));
         ageText.setText(getPrefs(this, "ageLabel"));
 
-        int fieldPos = getPrefsInt(this, "fieldPrefPosition");
-        if (fieldPos == 0) {
-            fieldPref.setText("None");
-        } else if (fieldPos == 1) {
-            fieldPref.setText("Food Service");
-        } else if (fieldPos == 2) {
-            fieldPref.setText("Hospitality");
-        } else if (fieldPos == 3) {
-            fieldPref.setText("Retail/Sales");
-        } else if (fieldPos == 4) {
-            fieldPref.setText("Public Health/Medical");
-        } else if (fieldPos == 5) {
-            fieldPref.setText("Other");
-        }
+        int fieldPos = getPrefsInt(this,"fieldPrefPosition");
+        if(fieldPos==0){fieldPref.setText("None");}
+        else if (fieldPos==1){fieldPref.setText("Food Service");}
+        else if (fieldPos==2){fieldPref.setText("Hospitality");}
+        else if(fieldPos==3){fieldPref.setText("Retail/Sales");}
+        else if (fieldPos==4){fieldPref.setText("Public Health");}
+        else if (fieldPos==5){fieldPref.setText("Other");}
 
-        int expPos = getPrefsInt(this, "ExpPrefPosition");
-        if (expPos == 0) {
-            skillPref2.setText("None");
-        } else if (fieldPos == 1) {
-            skillPref2.setText("No prior experience");
-        } else if (fieldPos == 2) {
-            skillPref2.setText("Have held a non-paying internship/job");
-        } else if (fieldPos == 3) {
-            skillPref2.setText("Have held a paying job");
-        } else if (fieldPos == 4) {
-            skillPref2.setText("Have held a paying job within the target industry");
-        }
+        int expPos = getPrefsInt(this,"ExpPrefPosition");
+        if (expPos==0){skillPref2.setText("None");}
+        else if (fieldPos==1){skillPref2.setText("No prior experience");}
+        else if (fieldPos==2){skillPref2.setText("Have held a non-paying internship/job");}
+        else if(fieldPos==3){skillPref2.setText("Have held a paying job");}
+        else if (fieldPos==4){skillPref2.setText("Paying job within the target industry");}
 
         skillPref3.setText(getPrefs(this, "cert1Label"));
         skillPref4.setText(getPrefs(this,"cert2Label"));
     }
 
+    /**
+     * Orders the contents of an ArrayList of Company objects by their compatibility score with the user.
+     * A User object is constructed using the local data from the profile. The matchWithCompany() method is invoked to return the
+     * compatibility score a User and Company object.
+     * Once ordered using a Selection Sort algorithm, the top five ranked Companies are displayed to the ProfileActivity.
+     * @param companies
+     */
     public void matchCompany(ArrayList<Company> companies){
         int size = companies.size();
         User user = new User(Integer.parseInt(ageText.getText().toString()), locationText.getText().toString(),  skillPref2.getText().toString(), fieldPref.getText().toString());
@@ -194,10 +189,6 @@ public class ProfileActivity extends AppCompatActivity {
         jobMatchText5.setText(companies.get(companies.size()-5).getName() + " ~" + companies.get(companies.size()-5).getLocation().getCity() +", " + companies.get(companies.size()-5).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-5)))+"%");
     }
 
-    public void goHome(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }
 
 

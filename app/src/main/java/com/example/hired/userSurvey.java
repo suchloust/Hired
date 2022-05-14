@@ -14,6 +14,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+/**
+ * Class that takes in user input to fill in filters and updates each of their values using
+ * Shared Preferences in both the userSurvey and User classes.
+ */
 public class userSurvey extends AppCompatActivity {
 
     EditText userAge, userName,  userZip, cert1, cert2;
@@ -23,6 +27,11 @@ public class userSurvey extends AppCompatActivity {
     Button saveSurvey;
     ImageView logo;
 
+    /**
+     * Initializes editText fields, spinners, and buttons.
+     * Creates and OnClickListener for a saveSurvey button that saves all changes made to the compatability criteria.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +51,12 @@ public class userSurvey extends AppCompatActivity {
 
         saveSurvey.setOnClickListener(new View.OnClickListener(){
 
+            /**
+             * Uses Shared Preferences to store preferences with the inputted data.
+             * This ensures that none of the data is erased after being editted in the userSurvey class.
+             * Shared Preferences for the spinners are saved as integers which store the position of the selected item.
+             * @param view
+             */
         @Override
         public void onClick (View view){
             Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
@@ -64,6 +79,11 @@ public class userSurvey extends AppCompatActivity {
 
 }
 
+    /**
+     * Uses Shared Preferences to update all text fields with the inputted data.
+     * This ensures that none of the data is erased after being editted in the userSurvey class.
+     * Shared Preferences for the spinners are employed to set the selected item to the position of the item selected in the previous edit.
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -80,6 +100,11 @@ public class userSurvey extends AppCompatActivity {
 
     }
 
+    /**
+     * Uses Shared Preferences to store preferences with the inputted data.
+     * This ensures that none of the data is erased after being editted in the userSurvey class.
+     * Shared Preferences for the spinners are saved as integers which store the position of the selected item.
+     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -97,6 +122,10 @@ public class userSurvey extends AppCompatActivity {
 
     }
 
+    /**
+     * Uses Shared Preferences to store preferences with the inputted data for the spinners only.
+     * Shared Preferences for the spinners are saved as integers which store the position of the selected item.
+     */
     @Override
     protected void onDestroy(){
         super.onDestroy();
@@ -104,6 +133,12 @@ public class userSurvey extends AppCompatActivity {
         setPrefsInt(this, skill1.getSelectedItemPosition(), "ExpPrefPosition");
     }
 
+    /**
+     * method used to declare a shared preference to a specific string inputted by the user
+     * @param context - context of application window
+     * @param pref - the user inputted String
+     * @param key - the preference's name in shared preferences
+     */
     public static void setPrefs(Context context, String pref, String key) {
         SharedPreferences preferences = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -111,12 +146,24 @@ public class userSurvey extends AppCompatActivity {
         editor.commit();
     }
 
+    /**
+     * method used to get the shared preference under a parameter key title.
+     * @param context - context of applicatoin window
+     * @param key - the preference's name in shared preferences
+     * @return - String input of user
+     */
     public static String getPrefs(Context context, String key) {
         SharedPreferences sh = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String s1 = sh.getString(key, "");
         return s1;
     }
 
+    /**
+     * method used to declare a shared preference for spinners using selected item position
+     * @param context - context of application window
+     * @param pref - the user inputted int
+     * @param key - the preference's name in shared preferences
+     */
     public static void setPrefsInt(Context context, int pref, String key){
         SharedPreferences preferences = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -124,13 +171,22 @@ public class userSurvey extends AppCompatActivity {
         editor.commit();
     }
 
+    /**
+     * method used to get the shared preference under a parameter key title for spinners only
+     * @param context - context of applicatoin window
+     * @param key - the preference's name in shared preferences
+     * @return - int position of selected item
+     */
     public static int getPrefsInt(Context context, String key) {
         SharedPreferences sh = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
         int s1 = sh.getInt(key, MODE_PRIVATE);
         return s1;
     }
 
-
+    /**
+     * formats the user's address in conventional location format
+     * @return - user's address
+     */
     public static String getAddress(){
         return userStreet.getText().toString()  + ", " + userLocation.getText().toString() + ", " + userState.getText().toString();
 

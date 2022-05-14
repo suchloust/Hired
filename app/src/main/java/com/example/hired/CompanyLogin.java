@@ -17,10 +17,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
+/**
+ * A class containing the logic for companies users to log into their WorkSpace accounts, which are stored using Firebase Authentication.
+ */
 public class CompanyLogin extends AppCompatActivity {
     private FirebaseAuth auth;
 
+    /**
+     * Setting the content view for the activity_company_login.xml page, initializing the instance of the Firebase Auth.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +34,11 @@ public class CompanyLogin extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
     }
 
+    /**
+     * Sign-in method for existing companies. The method signs users in by taking in their inputted email and password from the
+     * activity_company_login.xml page and calling the signInWithEmailAndPassword method on the instance of the Firebase Auth.
+     * @param v
+     */
     public void signIn(View v){
         EditText companyEmail = findViewById(R.id.companyEmail);
         EditText companyPassword = findViewById(R.id.companyPassword);
@@ -55,6 +66,9 @@ public class CompanyLogin extends AppCompatActivity {
         }
     }
 
+    /**
+     * When the user is signed in and is not null, start the CompanyProfile page.
+     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -66,11 +80,19 @@ public class CompanyLogin extends AppCompatActivity {
         }
     }
 
+    /**
+     * When the "Are you new here? Sign up here" button is clicked, this method is called and starts the CompanyRegistration.
+     * @param v
+     */
     public void performCompanyRegistration(View v){
         Intent intent = new Intent(this, CompanyRegistration.class);
         startActivity(intent);
     }
 
+    /**
+     * Starts the CompanyProfile activity when called.
+     * @param v
+     */
     private void performCompanyProfile(View v){
         Intent intent = new Intent(this, CompanyProfile.class);
         startActivity(intent);

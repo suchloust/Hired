@@ -17,12 +17,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * A class that stores company user's inputted data into the Realtime Database.
+ */
 public class CompanySurveyPage extends AppCompatActivity {
-
     private FirebaseAuth auth;
     private FirebaseUser user;
     private String userID;
 
+    /**
+     * Setting the content view to the activity_company_survey_page.xml page. Initializes the FirebaseAuth auth, and FirebaseUser user.
+     * Sets the userID to the current user's user ID.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +39,11 @@ public class CompanySurveyPage extends AppCompatActivity {
         userID = user.getUid();
     }
 
-    //storing the Company input in the Firebase for every field
+    /**
+     * Takes all the data from the user input and stores it in a node in the Realtime Database. Each user has their own node in the database
+     * identified using their userID.
+     * @param v
+     */
     public void performSave(View v){
         Log.d("CompanySurveyPage", "In the performSave method");
 
@@ -43,14 +54,13 @@ public class CompanySurveyPage extends AppCompatActivity {
             company.setName(companyName);
         Log.d("CompanySurveyPage", companyName);
 
-
          EditText companyEmailRaw = findViewById(R.id.companyEmailField);
             String companyEmail = companyEmailRaw.getText().toString();
             company.setEmail(companyEmail);
         Log.d("CompanySurveyPage", companyEmail);
 
         EditText companyURLRaw = findViewById(R.id.companyURLField);
-        String companyUrl = companyNameRaw.getText().toString();
+        String companyUrl = companyURLRaw.getText().toString();
         company.setUrl(companyUrl);
 
            EditText minAgeRaw = findViewById(R.id.ageMinimum);
@@ -88,6 +98,7 @@ public class CompanySurveyPage extends AppCompatActivity {
         String companyCert = companyCertRaw.getText().toString();
         company.setCertification(companyCert);
 
+        //Done setting the Company object, now pushing the Company object to the Firebase.
         FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference();
             DatabaseReference child = myRef.child(userID);
@@ -99,17 +110,12 @@ public class CompanySurveyPage extends AppCompatActivity {
         //going to the Company profile page
         Intent intent = new Intent(this, CompanyProfile.class);
         startActivity(intent);
-
-        //read this for next steps...in the profile class, we need an event listener that is listening for changes to the firebase
-        //merge with Diego and implement this
-        //after setting the user to the node, start displaying the Company information on their profile.
     }
 
-    public void goHome(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
+    /**
+     * When the log out button is clicked, this method signs out the user and starts the MainActivity activity.
+     * @param v
+     */
     public void signOut(View v){
         auth.signOut();
         Intent intent = new Intent(this, MainActivity.class);

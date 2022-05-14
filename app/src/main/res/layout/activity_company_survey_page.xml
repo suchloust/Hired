@@ -9,7 +9,7 @@
     android:contentDescription="@string/answerFieldHintStr">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/profileConstraint"
+        android:id="@+id/profileScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CompanySurveyPage">
