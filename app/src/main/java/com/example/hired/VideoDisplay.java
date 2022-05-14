@@ -2,9 +2,11 @@ package com.example.hired;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 public class VideoDisplay extends AppCompatActivity implements Serializable
 {
     private WebView mWebView;
-    private boolean mIsPaused = false;
+    private boolean mIsPaused;
     private Button userBut;
     private Button previous;
     private Button advance;
@@ -80,10 +82,25 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
             }});
 
 
+        Log.d("urls","urls: " + urls);
+        Log.d("urls2","iterate: " + url);
+        Log.d("urls3","first: " + urls.get(url));
         mWebView = (WebView) findViewById(R.id.webviewer);
 
         final WebView webview = (WebView) findViewById(R.id.webviewer);
-        webview.setWebViewClient(new WebViewClient());
+        webview.setWebViewClient(new WebViewClient() {
+
+        @Override
+        public void onReceivedError (WebView view,int errorCode, String description, String
+        failingUrl){
+            Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
+            handler.proceed(); // Ignore SSL certificate errors
+        }
+    });
 
         WebSettings websetting = webview.getSettings();
         websetting.setJavaScriptEnabled(true);
