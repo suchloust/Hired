@@ -193,7 +193,9 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
 
     private void arrayToVideo(ArrayList<Company> c) {
         ArrayList<String> urls = new ArrayList<String>();
-        for (int i=0; i<c.size(); i++){
+        for (int i=0; i<5; i++){
+            if (c.size()==i)
+                break;
             urls.add(c.get(i).getUrl());
         }
 
