@@ -52,14 +52,10 @@
     <string name="loginStr">Sign into your company account below.</string>
     <string name="signInNowStr">Sign in</string>
     <string name="newUserStr">Are you new here? Sign up here.</string>
-    <string name="experienceReqLabel">Required Experience:</string>
-    <string name="certificationsLabel">Required Certification:</string>
-    <string name="youTubeLabel">Your Advertisements:</string>
     <string name="urlStr">Enter in your YouTube URL</string>
     <string name="loc_sentient">Location</string>
     <string name="industry_sentient">Industry</string>
     <string name="reqs_sentient">Your Requirements</string>
-    <string name="reqs_sentient">Age and Experience\nRequirements</string>
     <string name="youtubePlaylist">YouTube Playlist URL</string>
     <string name="company_companyprofile">Company Name</string>
     <string name="location_companyprofile">Location</string>
@@ -95,13 +91,6 @@
     <string name="fieldOfInterestLabel">Field of interest</string>
     <string name="priorExperienceStr">Prior experience:</string>
     <string name="certLabel">Certifications:</string>
-
-
-
-
-
-
-
 
     <string-array name="experienceLevels">
         <item>No prior experience.</item>

@@ -11,21 +11,18 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class VideoDisplay extends AppCompatActivity
+public class VideoDisplay extends AppCompatActivity implements Serializable
 {
     private WebView mWebView;
     private boolean mIsPaused = false;
@@ -48,22 +45,15 @@ public class VideoDisplay extends AppCompatActivity
         auth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference();
 
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("ArrayCheck", "In the method.");
-                for (DataSnapshot snap1 : snapshot.getChildren()) {
-                    for (DataSnapshot snap : snap1.getChildren()){
-                    Company comp = snap.getValue(Company.class);
-                    urls.add(comp.getUrl());
-                }}
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                urls.add("www.youtube.com");
-            }
-        });
+        urls = (ArrayList<String>) getIntent().getSerializableExtra("key");
+        Log.d("testing","video array: " + urls);
+
+        if(urls.isEmpty()){
+            urls.add("youtube.com");
+        }
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
