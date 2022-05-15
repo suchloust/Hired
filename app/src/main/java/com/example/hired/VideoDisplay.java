@@ -31,8 +31,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     private Button advance;
     private int url;
     private ArrayList<String> urls;
-    private DatabaseReference ref;
-    private FirebaseAuth auth;
 
     /**
      * Initializes video class
@@ -42,9 +40,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         url = 0;
         urls = new ArrayList<String>();
-        auth=FirebaseAuth.getInstance();
-        ref= FirebaseDatabase.getInstance().getReference();
-
 
         urls = (ArrayList<String>) getIntent().getSerializableExtra("key");
         Log.d("testing","video array: " + urls);
@@ -52,8 +47,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         if(urls.isEmpty()){
             urls.add("youtube.com");
         }
-
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
@@ -91,7 +84,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         mIsPaused = true;
         resumeBrowser();
         webview.loadUrl(urls.get(url));
-
     }
 
     /**
@@ -108,7 +100,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
             Toast.makeText(getApplicationContext(),"This is the last video.",
                     Toast.LENGTH_SHORT).show();
         }
-
     }
 
     /**
@@ -129,7 +120,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         }
     }
 
-
     /**
      * Pauses the screen
      */
@@ -139,7 +129,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         pauseBrowser();
         super.onPause();
     }
-
 
     /**
      * Resumes the screen

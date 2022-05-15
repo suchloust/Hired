@@ -191,6 +191,10 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
         jobMatchText5.setText(companies.get(companies.size()-5).getName() + " ~" + companies.get(companies.size()-5).getLocation().getCity() +", " + companies.get(companies.size()-5).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-5)))+"%");
     }
 
+    /**
+     * Creates an array of the urls from the array of Company objects.
+     * @param c
+     */
     private void arrayToVideo(ArrayList<Company> c) {
         ArrayList<String> urls = new ArrayList<String>();
         for (int i=0; i<c.size(); i++){
@@ -202,12 +206,6 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
         intent.putExtra("key", urls);
         startActivity(intent);
     }
-
-    public void goHome(View v){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
 }
 
 
