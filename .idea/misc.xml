@@ -4,38 +4,33 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/drawable/newprofilecase.xml" value="0.2265" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/font/rubik.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1606425702811245" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_company_survey.xml" value="0.136" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_filters.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_profile.xml" value="0.4" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_user_survey.xml" value="0.4" />
+        <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/layout/activity_videos.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/poorv/AndroidStudioProjects/Hired/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
-        <entry key="app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.2335" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2335" />
-        <entry key="app/src/main/res/drawable-v24/logo_foreground.xml" value="0.2335" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.226" />
-        <entry key="app/src/main/res/drawable/company_button.xml" value="0.121" />
-        <entry key="app/src/main/res/drawable/custom_button_back.xml" value="0.1685" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2335" />
-        <entry key="app/src/main/res/drawable/logo_background.xml" value="0.2335" />
-        <entry key="app/src/main/res/layout/activity_company_login.xml" value="0.24262609544143177" />
-        <entry key="app/src/main/res/layout/activity_company_profile.xml" value="0.24077301025390638" />
-        <entry key="app/src/main/res/layout/activity_company_registration.xml" value="0.2756247526679943" />
+        <entry key="app/src/main/res/layout/activity_company_profile.xml" value="0.29132843017578125" />
+        <entry key="app/src/main/res/layout/activity_company_registration.xml" value="0.38382110595703123" />
         <entry key="app/src/main/res/layout/activity_company_survey.xml" value="0.11796875" />
-        <entry key="app/src/main/res/layout/activity_company_survey_page.xml" value="0.27600402832031257" />
+        <entry key="app/src/main/res/layout/activity_company_survey_page.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/activity_explore.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_filters.xml" value="0.17695770263671873" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33706003824869796" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24522094726562504" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.11796875" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2798507462686567" />
-        <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.27628173828125" />
-        <entry key="app/src/main/res/layout/activity_videos.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_videos.xml" value="0.26932373046875" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.11796875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.128" />
       </map>

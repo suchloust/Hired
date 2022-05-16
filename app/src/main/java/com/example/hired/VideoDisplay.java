@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,7 +34,7 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     private int url;
     private ArrayList<String> urls;
     private DatabaseReference ref;
-    private FirebaseAuth auth;
+
 
     /**
      * Initializes video class
@@ -44,7 +44,7 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         url = 0;
         urls = new ArrayList<String>();
-        auth=FirebaseAuth.getInstance();
+
         ref= FirebaseDatabase.getInstance().getReference();
 
 
@@ -90,17 +90,17 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         final WebView webview = (WebView) findViewById(R.id.webviewer);
         webview.setWebViewClient(new WebViewClient() {
 
-        @Override
-        public void onReceivedError (WebView view,int errorCode, String description, String
-        failingUrl){
-            Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
-        }
+            @Override
+            public void onReceivedError (WebView view,int errorCode, String description, String
+                    failingUrl){
+                Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
+            }
 
-        @Override
-        public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
-            handler.proceed(); // Ignore SSL certificate errors
-        }
-    });
+            @Override
+            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
+                handler.proceed(); // Ignore SSL certificate errors
+            }
+        });
 
         WebSettings websetting = webview.getSettings();
         websetting.setJavaScriptEnabled(true);
@@ -120,7 +120,7 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         resumeBrowser();
         url++;
         if (url<url_list.size()-1)
-        mWebView.loadUrl(url_list.get(url));
+            mWebView.loadUrl(url_list.get(url));
         else{
             Toast.makeText(getApplicationContext(),"This is the last video.",
                     Toast.LENGTH_SHORT).show();
@@ -138,7 +138,7 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         url--;
 
         if (url>-1)
-        mWebView.loadUrl(url_list.get(url));
+            mWebView.loadUrl(url_list.get(url));
 
         else{
             Toast.makeText(getApplicationContext(),"This is the first video.",
