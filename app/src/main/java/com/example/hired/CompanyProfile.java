@@ -97,7 +97,8 @@ public class CompanyProfile extends AppCompatActivity {
             }
         });
 
-        final Handler handler = new Handler();
+
+       final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
