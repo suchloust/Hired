@@ -170,11 +170,10 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
      * @param companies
      */
     public void matchCompany(ArrayList<Company> companies){
-        int size = companies.size();
         User user = new User(Integer.parseInt(ageText.getText().toString()), locationText.getText().toString(),  skillPref2.getText().toString(), fieldPref.getText().toString());
         for (int i = 0; i < companies.size()-1;i++){
             int position = i;
-            for(int k = i +1; k < companies.size(); k++){
+            for(int k = i + 1; k < companies.size(); k++){
                 if (user.matchWithCompany(companies.get(k)) < user.matchWithCompany(companies.get(position))){
                     position = k;
                 }
@@ -192,16 +191,32 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
     }
 
     /**
+     * This method takes the ArrayList of companies (which are objects of the Company class) and
+     * then gets the video URLs from the top 5 company matches in the ArrayList. URLs which contain
+     * https:// or http:// are truncated to remove those prefixes, because the webview search will
+     * add that to the URL upon search. The method finally sends the ArrayList of URL strings to the
+     * VideoDisplay class, where the user can view the videos.
+     * @param c ArrayList of Company objects
+     */
+    /**
      * Creates an array of the urls from the array of Company objects.
      * @param c
      */
     private void arrayToVideo(ArrayList<Company> c) {
         ArrayList<String> urls = new ArrayList<String>();
-        for (int i=0; i<c.size(); i++){
-            urls.add(c.get(i).getUrl());
+        int size = c.size();
+        for (int i=c.size()-1; i>size-6; i--){
+            if (i < 0)
+                break;
+            if (c.get(i).getUrl().contains("https://"))
+                urls.add(c.get(i).getUrl().substring(8));
+            else if (c.get(i).getUrl().contains("http://"))
+                urls.add(c.get(i).getUrl().substring(7));
+            else
+                urls.add(c.get(i).getUrl());
+            Log.d("testing","companies urls: " + urls);
         }
 
-        Log.d("testing","companies urls: " + urls);
         Intent intent = new Intent(ProfileActivity.this, VideoDisplay.class);
         intent.putExtra("key", urls);
         startActivity(intent);

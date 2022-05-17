@@ -111,7 +111,7 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         resumeBrowser();
         url++;
-        if (url<url_list.size()-1)
+        if (url < 5)
         mWebView.loadUrl(url_list.get(url));
         else{
             Toast.makeText(getApplicationContext(),"This is the last video.",
