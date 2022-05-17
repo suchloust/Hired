@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -44,24 +43,44 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         url = 0;
         urls = new ArrayList<String>();
-        auth=FirebaseAuth.getInstance();
-        ref= FirebaseDatabase.getInstance().getReference();
-
 
         urls = (ArrayList<String>) getIntent().getSerializableExtra("key");
-        Log.d("testing","video array: " + urls);
 
         if(urls.isEmpty()){
             urls.add("youtube.com");
         }
 
-
+        Log.d("arraylist",""+ urls);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
         userBut = (Button) findViewById(R.id.back_user);
         previous = (Button) findViewById(R.id.previous_video);
         advance = (Button) findViewById(R.id.proceed);
+
+        mWebView = (WebView) findViewById(R.id.webviewer);
+
+        final WebView webview = (WebView) findViewById(R.id.webviewer);
+        webview.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onReceivedError (WebView view,int errorCode, String description, String
+                    failingUrl){
+                Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
+                handler.proceed(); // Ignore SSL certificate errors
+            }
+        });
+
+        WebSettings websetting = webview.getSettings();
+        websetting.setJavaScriptEnabled(true);
+        websetting.setDomStorageEnabled(true);
+        mIsPaused = true;
+        resumeBrowser();
+        webview.loadUrl(urls.get(url));
 
         //Button Methods
         userBut.setOnClickListener(new View.OnClickListener() {
@@ -81,34 +100,6 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
                 advanceScreen(urls);
             }});
 
-
-        Log.d("urls","urls: " + urls);
-        Log.d("urls2","iterate: " + url);
-        Log.d("urls3","first: " + urls.get(url));
-        mWebView = (WebView) findViewById(R.id.webviewer);
-
-        final WebView webview = (WebView) findViewById(R.id.webviewer);
-        webview.setWebViewClient(new WebViewClient() {
-
-        @Override
-        public void onReceivedError (WebView view,int errorCode, String description, String
-        failingUrl){
-            Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
-            handler.proceed(); // Ignore SSL certificate errors
-        }
-    });
-
-        WebSettings websetting = webview.getSettings();
-        websetting.setJavaScriptEnabled(true);
-        websetting.setDomStorageEnabled(true);
-        mIsPaused = true;
-        resumeBrowser();
-        webview.loadUrl(urls.get(url));
-
     }
 
     /**
@@ -119,11 +110,12 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         resumeBrowser();
         url++;
-        if (url < 5)
-        mWebView.loadUrl(url_list.get(url));
+        if (url < urls.size())
+            mWebView.loadUrl(url_list.get(url));
         else{
             Toast.makeText(getApplicationContext(),"This is the last video.",
                     Toast.LENGTH_SHORT).show();
+            url = urls.size()-1;
         }
 
     }
@@ -136,13 +128,13 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     {
         resumeBrowser();
         url--;
-
         if (url>-1)
-        mWebView.loadUrl(url_list.get(url));
+            mWebView.loadUrl(url_list.get(url));
 
         else{
             Toast.makeText(getApplicationContext(),"This is the first video.",
                     Toast.LENGTH_SHORT).show();
+            url = 0;
         }
     }
 
@@ -208,6 +200,9 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
             final Method method = WebView.class.getMethod(name);
             method.invoke(mWebView);
         } catch (final Exception e)
-        {}
+        {
+            Log.d("error","ERROR MESSAGE: APP IS BREAKING");
+        }
     }
+
 }

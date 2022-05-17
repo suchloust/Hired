@@ -176,11 +176,11 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
             for(int k = i + 1; k < companies.size(); k++){
                 if (user.matchWithCompany(companies.get(k)) < user.matchWithCompany(companies.get(position))){
                     position = k;
-                }
+
                 Company temp = companies.get(i);
                 companies.set(i, companies.get(position));
                 companies.set(position, temp);
-            }
+            }}
         }
 
         jobMatchText1.setText(companies.get(companies.size()-1).getName() + " ~" + companies.get(companies.size()-1).getLocation().getCity() +", " + companies.get(companies.size()-1).getLocation().getState() + ": " + String.valueOf(user.matchWithCompany(companies.get(companies.size()-1)))+"%");

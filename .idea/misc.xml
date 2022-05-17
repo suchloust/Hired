@@ -22,7 +22,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2335" />
         <entry key="app/src/main/res/drawable/logo_background.xml" value="0.2335" />
         <entry key="app/src/main/res/layout/activity_company_login.xml" value="0.24262609544143177" />
-        <entry key="app/src/main/res/layout/activity_company_profile.xml" value="0.4980316162109377" />
+        <entry key="app/src/main/res/layout/activity_company_profile.xml" value="0.32432708740234395" />
         <entry key="app/src/main/res/layout/activity_company_registration.xml" value="0.2756247526679943" />
         <entry key="app/src/main/res/layout/activity_company_survey.xml" value="0.11796875" />
         <entry key="app/src/main/res/layout/activity_company_survey_page.xml" value="0.27600402832031257" />
@@ -33,7 +33,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24522094726562504" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.2798507462686567" />
         <entry key="app/src/main/res/layout/activity_user_survey.xml" value="0.27628173828125" />
-        <entry key="app/src/main/res/layout/activity_videos.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_videos.xml" value="0.13737945556640627" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.11796875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.128" />
       </map>
