@@ -2,29 +2,23 @@ package com.example.hired;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.http.SslError;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 
 import java.io.Serializable;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class VideoDisplay extends AppCompatActivity implements Serializable
-{
+public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
     private WebView mWebView;
     private boolean mIsPaused;
     private Button userBut;
@@ -32,25 +26,22 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
     private Button advance;
     private int url;
     private ArrayList<String> urls;
-    private DatabaseReference ref;
-    private FirebaseAuth auth;
+    private String api_key;
+    YouTubePlayerView ytPlayer;
 
     /**
      * Initializes video class
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
+        api_key = "AIzaSyBqIHSck4tus3mG1gkc_OtHGaYp-piHJwM";
         url = 0;
         urls = new ArrayList<String>();
 
         urls = (ArrayList<String>) getIntent().getSerializableExtra("key");
 
-        if(urls.isEmpty()){
-            urls.add("youtube.com");
-        }
 
-        Log.d("arraylist",""+ urls);
+        Log.d("arraylist", "" + urls);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
@@ -58,29 +49,37 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
         previous = (Button) findViewById(R.id.previous_video);
         advance = (Button) findViewById(R.id.proceed);
 
-        mWebView = (WebView) findViewById(R.id.webviewer);
+        ytPlayer = findViewById(R.id.youtube);
 
-        final WebView webview = (WebView) findViewById(R.id.webviewer);
-        webview.setWebViewClient(new WebViewClient() {
 
+        YouTubePlayer.OnInitializedListener listener = new YouTubePlayer.OnInitializedListener() {
+            // Implement two methods by clicking on red
+            // error bulb inside onInitializationSuccess
+            // method add the video link or the playlist
+            // link that you want to play In here we
+            // also handle the play and pause
+            // functionality
             @Override
-            public void onReceivedError (WebView view,int errorCode, String description, String
-                    failingUrl){
-                Toast.makeText(VideoDisplay.this, description, Toast.LENGTH_SHORT).show();
+            public void onInitializationSuccess(
+                    YouTubePlayer.Provider provider,
+                    YouTubePlayer youTubePlayer, boolean b) {
+                youTubePlayer.loadVideo(urls.get(url));
+                youTubePlayer.play();
             }
 
+            // Inside onInitializationFailure
+            // implement the failure functionality
+            // Here we will show toast
             @Override
-            public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
-                handler.proceed(); // Ignore SSL certificate errors
+            public void onInitializationFailure(YouTubePlayer.Provider provider,
+                                                YouTubeInitializationResult
+                                                        youTubeInitializationResult) {
+                Toast.makeText(getApplicationContext(), "Video player Failed", Toast.LENGTH_SHORT).show();
             }
-        });
+        };
 
-        WebSettings websetting = webview.getSettings();
-        websetting.setJavaScriptEnabled(true);
-        websetting.setDomStorageEnabled(true);
-        mIsPaused = true;
-        resumeBrowser();
-        webview.loadUrl(urls.get(url));
+        ytPlayer.initialize(api_key,listener);
+
 
         //Button Methods
         userBut.setOnClickListener(new View.OnClickListener() {
@@ -88,121 +87,55 @@ public class VideoDisplay extends AppCompatActivity implements Serializable
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
-            }});
+            }
+        });
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 previousScreen(urls);
-            }});
+            }
+        });
         advance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 advanceScreen(urls);
-            }});
+            }
+        });
 
     }
 
     /**
      * Plays the next video
+     *
      * @param url_list list of youtube urls
      */
-    public void advanceScreen(ArrayList<String> url_list)
-    {
-        resumeBrowser();
+    public void advanceScreen(ArrayList<String> url_list) {
         url++;
-        if (url < urls.size())
-            mWebView.loadUrl(url_list.get(url));
-        else{
-            Toast.makeText(getApplicationContext(),"This is the last video.",
+        if (url < urls.size()) {
+            //youTubePlayer.loadVideo(urls.get(url));
+            //youTubePlayer.play();
+        } else {
+            Toast.makeText(getApplicationContext(), "This is the last video.",
                     Toast.LENGTH_SHORT).show();
-            url = urls.size()-1;
+            url = urls.size() - 1;
         }
 
     }
 
     /**
      * Plays the previous video
+     *
      * @param url_list list of youtube urls
      */
-    public void previousScreen(ArrayList<String> url_list)
-    {
-        resumeBrowser();
+    public void previousScreen(ArrayList<String> url_list) {
         url--;
-        if (url>-1)
-            mWebView.loadUrl(url_list.get(url));
-
-        else{
-            Toast.makeText(getApplicationContext(),"This is the first video.",
+        if (url > -1) {
+            //youTubePlayer.loadVideo(urls.get(url));
+            //youTubePlayer.play();
+        } else {
+            Toast.makeText(getApplicationContext(), "This is the first video.",
                     Toast.LENGTH_SHORT).show();
             url = 0;
         }
     }
-
-
-    /**
-     * Pauses the screen
-     */
-    @Override
-    protected void onPause()
-    {
-        pauseBrowser();
-        super.onPause();
-    }
-
-
-    /**
-     * Resumes the screen
-     */
-    @Override
-    protected void onResume()
-    {
-        resumeBrowser();
-        super.onResume();
-    }
-
-    /**
-     * Hidden method to pause webpage
-     */
-    private void pauseBrowser()
-    {
-        if (!mIsPaused)
-        {
-            // pause flash and javascript etc
-            callHiddenWebViewMethod(mWebView, "onPause");
-            mWebView.pauseTimers();
-            mIsPaused = true;
-        }
-    }
-
-    /**
-     * Hidden method to resume webpage
-     */
-    private void resumeBrowser()
-    {
-        if (mIsPaused)
-        {
-            //resume flash and javascript etc
-            callHiddenWebViewMethod(mWebView, "onResume");
-            mWebView.resumeTimers();
-            mIsPaused = false;
-        }
-    }
-
-    /**
-     * Calls hidden method
-     * @param wv webview
-     * @param name name of method call
-     */
-    private void callHiddenWebViewMethod(final WebView wv, final String name)
-    {
-        try
-        {
-            final Method method = WebView.class.getMethod(name);
-            method.invoke(mWebView);
-        } catch (final Exception e)
-        {
-            Log.d("error","ERROR MESSAGE: APP IS BREAKING");
-        }
-    }
-
 }

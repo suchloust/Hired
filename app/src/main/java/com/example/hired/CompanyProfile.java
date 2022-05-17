@@ -86,7 +86,7 @@ public class CompanyProfile extends AppCompatActivity {
                     cert.setText(company.getCertification());
                     Log.d("testing","company: " + company.getUrl());
                     Log.d("testing","company: " + company.getName());
-                    videosURL = company.getUrl();
+                    videosURL = "youtu.be/" + company.getUrl();
                 }
                 }
 

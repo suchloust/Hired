@@ -202,14 +202,7 @@ public class ProfileActivity extends AppCompatActivity implements Serializable {
         ArrayList<String> urls = new ArrayList<String>();
         int size = c.size();
         for (int i=c.size()-1; i>size-6; i--){
-            if (i < 0)
-                break;
-            if (c.get(i).getUrl().contains("https://"))
-                urls.add(c.get(i).getUrl().substring(8));
-            else if (c.get(i).getUrl().contains("http://"))
-                urls.add(c.get(i).getUrl().substring(7));
-            else
-                urls.add(c.get(i).getUrl());
+            urls.add(c.get(i).getUrl());
             Log.d("testing","companies urls: " + urls);
         }
 
