@@ -9,35 +9,45 @@
 
     <WebView
         android:id="@+id/webviewer"
-        android:layout_width="588dp"
-        android:layout_height="523dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="604dp"
+        android:layout_height="631dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back_user"
-        android:layout_width="161dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="228dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/company_button"
         android:backgroundTint="@color/Blue"
-        android:text="User Profile"
+        android:fontFamily="@font/rubik"
+        android:text="@string/backToUserProfile"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/proceed"
         android:layout_width="135dp"
         android:layout_height="66dp"
         android:layout_marginTop="700dp"
-        android:layout_marginBottom="100dp"
-        android:text="Next"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/company_button"
         android:backgroundTint="@color/TealBlue"
+        android:fontFamily="@font/rubik"
+        android:text="Next"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
@@ -45,20 +55,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/previous_video"
         android:layout_width="143dp"
         android:layout_height="66dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="700dp"
         android:layout_marginEnd="413dp"
-        android:layout_marginBottom="100dp"
-        android:text="Previous"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/company_button"
         android:backgroundTint="@color/TealBlue"
+        android:fontFamily="@font/rubik"
+        android:text="@string/previousButtonStr"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />

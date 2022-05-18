@@ -88,6 +88,8 @@
     <string name="fieldOfInterestLabel">Field of interest</string>
     <string name="priorExperienceStr">Prior experience:</string>
     <string name="certLabel">Certifications:</string>
+    <string name="backToUserProfile">Back to profile</string>
+    <string name="previousButtonStr">Previous</string>
 
 
     <string-array name="experienceLevels">
