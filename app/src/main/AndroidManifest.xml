@@ -3,6 +3,11 @@
     package="com.example.hired">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -10,8 +15,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Hired">
+        android:theme="@style/Theme.Hired"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".CompanyProfile"
             android:exported="false" />
