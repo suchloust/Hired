@@ -1,22 +1,20 @@
 package com.example.hired;
 
 import android.content.Intent;
-import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -25,22 +23,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Method;
-
 /**
  * This class gets a logged in company user's data from the Realtime Database and
  * displays their information on their profile page.
  */
-public class CompanyProfile extends AppCompatActivity {
+public class CompanyProfile extends YouTubeBaseActivity {
     private Button edit;
     private DatabaseReference ref;
     private FirebaseAuth auth;
     private FirebaseUser user;
     private String userID;
     private String videosURL;
-    private WebView mWebView;
-    private boolean mIsPaused;
+    private YouTubePlayerView ytPlayer;
     private Company company;
+    private String api_key;
 
     /**
      * Sets the content view of the activity_company_profile.xml page. Initializes an instance of the Firebase Auth and initializes the
@@ -53,6 +49,7 @@ public class CompanyProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        api_key = "AIzaSyBqIHSck4tus3mG1gkc_OtHGaYp-piHJwM";
         setContentView(R.layout.activity_company_profile);
 
         videosURL = new String();
@@ -86,7 +83,7 @@ public class CompanyProfile extends AppCompatActivity {
                     cert.setText(company.getCertification());
                     Log.d("testing","company: " + company.getUrl());
                     Log.d("testing","company: " + company.getName());
-                    videosURL = "youtu.be/" + company.getUrl();
+                    videosURL = company.getUrl();
                 }
                 }
 
@@ -102,39 +99,41 @@ public class CompanyProfile extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Do something after 3s = 3000ms
-                mWebView = (WebView) findViewById(R.id.companyProfileVideos);
+                ytPlayer = findViewById(R.id.youtuber);
 
-                final WebView webview = (WebView) findViewById(R.id.companyProfileVideos);
-                webview.setWebViewClient(new WebViewClient() {
 
+                YouTubePlayer.OnInitializedListener listener = new YouTubePlayer.OnInitializedListener() {
+                    // Implement two methods by clicking on red
+                    // error bulb inside onInitializationSuccess
+                    // method add the video link or the playlist
+                    // link that you want to play In here we
+                    // also handle the play and pause
+                    // functionality
                     @Override
-                    public void onReceivedError (WebView view,int errorCode, String description, String
-                            failingUrl){
-                        Toast.makeText(CompanyProfile.this, description, Toast.LENGTH_SHORT).show();
+                    public void onInitializationSuccess(
+                            YouTubePlayer.Provider provider,
+                            YouTubePlayer youTubePlayer, boolean b) {
+                        youTubePlayer.loadVideo(videosURL);
+                        youTubePlayer.play();
                     }
 
+                    // Inside onInitializationFailure
+                    // implement the failure functionality
+                    // Here we will show toast
                     @Override
-                    public void onReceivedSslError (WebView view, SslErrorHandler handler, SslError er){
-                        handler.proceed(); // Ignore SSL certificate errors
+                    public void onInitializationFailure(YouTubePlayer.Provider provider,
+                                                        YouTubeInitializationResult
+                                                                youTubeInitializationResult) {
+                        Toast.makeText(getApplicationContext(), "Video player Failed", Toast.LENGTH_SHORT).show();
                     }
-                });
+                };
 
-                Log.d("testing","url: " + videosURL);
-
-                WebSettings websetting = webview.getSettings();
-                websetting.setJavaScriptEnabled(true);
-                websetting.setDomStorageEnabled(true);
-                mIsPaused = true;
-                resumeBrowser();
-                webview.loadUrl(videosURL);
+                ytPlayer.initialize(api_key,listener);
 
             }
 
 
         }, 3000);
-
-
 
 
         /**
@@ -157,69 +156,5 @@ public class CompanyProfile extends AppCompatActivity {
         auth.signOut();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-    }
-
-    /**
-     * Pauses the screen
-     */
-    @Override
-    protected void onPause()
-    {
-        pauseBrowser();
-        super.onPause();
-    }
-
-
-    /**
-     * Resumes the screen
-     */
-    @Override
-    protected void onResume()
-    {
-        resumeBrowser();
-        super.onResume();
-    }
-
-    /**
-     * Hidden method to pause webpage
-     */
-    private void pauseBrowser()
-    {
-        if (!mIsPaused)
-        {
-            // pause flash and javascript etc
-            callHiddenWebViewMethod(mWebView, "onPause");
-            mWebView.pauseTimers();
-            mIsPaused = true;
-        }
-    }
-
-    /**
-     * Hidden method to resume webpage
-     */
-    private void resumeBrowser()
-    {
-        if (mIsPaused)
-        {
-            //resume flash and javascript etc
-            callHiddenWebViewMethod(mWebView, "onResume");
-            mWebView.resumeTimers();
-            mIsPaused = false;
-        }
-    }
-
-    /**
-     * Calls hidden method
-     * @param wv webview
-     * @param name name of method call
-     */
-    private void callHiddenWebViewMethod(final WebView wv, final String name)
-    {
-        try
-        {
-            final Method method = WebView.class.getMethod(name);
-            method.invoke(mWebView);
-        } catch (final Exception e)
-        {}
     }
 }

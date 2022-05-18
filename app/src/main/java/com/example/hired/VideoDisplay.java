@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,15 +18,14 @@ import java.util.ArrayList;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
-    private WebView mWebView;
-    private boolean mIsPaused;
     private Button userBut;
     private Button previous;
     private Button advance;
     private int url;
     private ArrayList<String> urls;
     private String api_key;
-    YouTubePlayerView ytPlayer;
+    private YouTubePlayerView ytPlayer;
+    private YouTubePlayer playboy;
 
     /**
      * Initializes video class
@@ -63,6 +61,7 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
             public void onInitializationSuccess(
                     YouTubePlayer.Provider provider,
                     YouTubePlayer youTubePlayer, boolean b) {
+                playboy = youTubePlayer;
                 youTubePlayer.loadVideo(urls.get(url));
                 youTubePlayer.play();
             }
@@ -112,8 +111,8 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
     public void advanceScreen(ArrayList<String> url_list) {
         url++;
         if (url < urls.size()) {
-            //youTubePlayer.loadVideo(urls.get(url));
-            //youTubePlayer.play();
+            playboy.loadVideo(urls.get(url));
+            playboy.play();
         } else {
             Toast.makeText(getApplicationContext(), "This is the last video.",
                     Toast.LENGTH_SHORT).show();
@@ -130,8 +129,8 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
     public void previousScreen(ArrayList<String> url_list) {
         url--;
         if (url > -1) {
-            //youTubePlayer.loadVideo(urls.get(url));
-            //youTubePlayer.play();
+            playboy.loadVideo(urls.get(url));
+            playboy.play();
         } else {
             Toast.makeText(getApplicationContext(), "This is the first video.",
                     Toast.LENGTH_SHORT).show();
