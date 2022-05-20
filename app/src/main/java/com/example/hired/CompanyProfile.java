@@ -94,7 +94,9 @@ public class CompanyProfile extends YouTubeBaseActivity {
             }
         });
 
-
+        /**
+         * Plays "Your Advertisements," giving the video enough time to load
+         */
        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -131,9 +133,10 @@ public class CompanyProfile extends YouTubeBaseActivity {
                 ytPlayer.initialize(api_key,listener);
 
             }
-
+        //Comments detailing player initialization available on VideoDisplay
 
         }, 3000);
+        //Delays the YouTube video because of asynchronous FireBase loop
 
 
         /**
