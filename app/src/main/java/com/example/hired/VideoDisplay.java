@@ -16,6 +16,9 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * This class displays videos from the companies the user matches to using the YouTube API
+ */
 @SuppressLint("SetJavaScriptEnabled")
 public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
     private Button userBut;
@@ -57,6 +60,13 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
             // link that you want to play In here we
             // also handle the play and pause
             // functionality
+
+            /**
+             * Plays the first YouTube video if the player initializes successfully
+             * @param provider YouTube provider
+             * @param youTubePlayer YouTube player
+             * @param b Initialization success
+             */
             @Override
             public void onInitializationSuccess(
                     YouTubePlayer.Provider provider,
@@ -69,6 +79,12 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
             // Inside onInitializationFailure
             // implement the failure functionality
             // Here we will show toast
+
+            /**
+             * Displays error message if YouTube API cannot be initialized
+             * @param provider YouTube provider
+             * @param youTubeInitializationResult Result of initialization (failure)
+             */
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider,
                                                 YouTubeInitializationResult
@@ -81,6 +97,9 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
 
 
         //Button Methods
+        /**
+         * Goes to User Profile when corresponding button is clicked
+         */
         userBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,12 +107,18 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
                 startActivity(intent);
             }
         });
+        /**
+         * Goes to previous video when corresponding button is clicked
+         */
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 previousScreen(urls);
             }
         });
+        /**
+         * Goes to next video when corresponding button is clicked
+         */
         advance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,7 +130,6 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
 
     /**
      * Plays the next video
-     *
      * @param url_list list of youtube urls
      */
     public void advanceScreen(ArrayList<String> url_list) {
@@ -123,7 +147,6 @@ public class VideoDisplay extends YouTubeBaseActivity implements Serializable {
 
     /**
      * Plays the previous video
-     *
      * @param url_list list of youtube urls
      */
     public void previousScreen(ArrayList<String> url_list) {
